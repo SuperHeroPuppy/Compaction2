@@ -38,8 +38,8 @@ require("prototypes/technology/technology");
 
 table.insert(data.raw["lab"]["lab"].inputs, "flight-science-pack")
 
-table.insert(data.raw["lab"]["burner-lab"].inputs, "automation-science-pack")
-table.insert(data.raw["lab"]["burner-lab"].inputs, "logistic-science-pack")
+--table.insert(data.raw["lab"]["burner-lab"].inputs, "automation-science-pack")
+--table.insert(data.raw["lab"]["burner-lab"].inputs, "logistic-science-pack")
 
 for name, tree in pairs (data.raw["tree"]) do
     if string.find(name, "tree%-%d%d") then
