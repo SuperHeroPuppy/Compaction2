@@ -7,7 +7,6 @@
   "dependencies": [
     "base >= 2.0.37",
     "? elevated-rails >= 2.0.37",
-    "? bztin >= 0.1.13",
     "! space-age >= 2.0.37",
     "! red technology >= 0.5.4"
 ]

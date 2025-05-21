@@ -346,7 +346,7 @@ data:extend({
             count = 15,
             ingredients =
             {
-                { "automation-science-pack", 5 },
+                { "automation-science-pack", 1 },
             },
             time = 20
         },
@@ -371,7 +371,7 @@ data:extend({
             count = 15,
             ingredients =
             {
-                { "automation-science-pack", 5 },
+                { "automation-science-pack", 1 },
             },
             time = 20
         },
@@ -388,15 +388,15 @@ data:extend({
             { type = "unlock-recipe", recipe = "filtered-water" },
         },
         prerequisites = {
-            "oil-processing",
+            "chemical-processing",
         },
         unit =
         {
             count = 15,
             ingredients =
             {
-                { "automation-science-pack", 5 },
-                { "logistic-science-pack",   4 },
+                { "automation-science-pack", 1 },
+                { "logistic-science-pack",   1 },
             },
             time = 20
         },
@@ -446,12 +446,12 @@ data:extend({
         },
         unit =
         {
-            count = 85,
+            count = 185,
             ingredients =
             {
-                { "automation-science-pack", 5 },
-                { "logistic-science-pack",   4 },
-                { "chemical-science-pack",   10 },
+                { "automation-science-pack", 1 },
+                { "logistic-science-pack",   1 },
+                { "chemical-science-pack",   1 },
             },
             time = 10
         },
@@ -478,13 +478,13 @@ data:extend({
         },
         unit =
         {
-            count = 150,
+            count = 350,
             ingredients =
             {
-                { "automation-science-pack", 4 },
-                { "logistic-science-pack",   2 },
+                { "automation-science-pack", 1 },
+                { "logistic-science-pack",   1 },
             },
-            time = 10
+            time = 40
         },
     },
     {
@@ -502,15 +502,16 @@ data:extend({
             "electronics",
             "lamp",
             "concrete",
-            "shredder-tech"
+            "shredder-tech",
+            "chemical-processing"
         },
         unit =
         {
-            count = 120,
+            count = 150,
             ingredients =
             {
-                { "automation-science-pack", 2 },
-                { "logistic-science-pack",   2 },
+                { "automation-science-pack", 1 },
+                { "logistic-science-pack",   1 },
             },
             time = 5
         },
@@ -533,11 +534,11 @@ data:extend({
         },
         unit =
         {
-            count = 150,
+            count = 250,
             ingredients =
             {
-                { "automation-science-pack", 4 },
-                { "logistic-science-pack",   2 },
+                { "automation-science-pack", 1 },
+                { "logistic-science-pack",   1 },
             },
             time = 10
         },
@@ -566,12 +567,12 @@ data:extend({
         },
         unit =
         {
-            count = 120,
+            count = 100,
             ingredients =
             {
                 { "automation-science-pack", 1 },
             },
-            time = 10
+            time = 3
         },
     },
     {
@@ -598,14 +599,14 @@ data:extend({
         },
         unit =
         {
-            count = 10,
+            count = 12,
             ingredients =
             {
                 { "automation-science-pack", 1 },
-                { "logistic-science-pack",   2 },
-                { "chemical-science-pack",   2 },
+                { "logistic-science-pack",   1 },
+                { "chemical-science-pack",   1 },
             },
-            time = 2
+            time = 3
         },
     },
     {
@@ -635,7 +636,7 @@ data:extend({
         icon_size = 64,
         icon_mipmaps = 4,
         icon = "__base__/graphics/icons/fluid/sulfuric-acid.png",
-        prerequisites = { "oil-processing" },
+        prerequisites = { "chemical-processing" },
         effects =
         {
             {
@@ -746,11 +747,34 @@ data:extend({
         },
         unit =
         {
-            count = 150,
+            count = 160,
             ingredients =
             {
-                { "automation-science-pack", 4 },
-                { "logistic-science-pack",   2 },
+                { "automation-science-pack", 1 },
+                { "logistic-science-pack",   1 },
+            },
+            time = 15
+        },
+    },
+    {
+        type = "technology",
+        name = "chemical-processing",
+        icon = "__base__/graphics/icons/chemical-plant.png",
+        localised_description = "Chemical Processing, Unlock the chemical plant.",
+        icon_size = 64,
+        effects = {
+            { type = "unlock-recipe", recipe = "chemical-plant" }
+        },
+        prerequisites = {
+            "fluid-handling",
+        },
+        unit =
+        {
+            count = 10,
+            ingredients =
+            {
+                { "automation-science-pack", 1 },
+                { "logistic-science-pack",   1 },
             },
             time = 10
         },
@@ -797,14 +821,6 @@ data:extend({
             {
                 type = "unlock-recipe",
                 recipe = "electronic-circuit"
-            },
-            {
-                type = "unlock-recipe",
-                recipe = "inserter"
-            },
-            {
-                type = "unlock-recipe",
-                recipe = "small-electric-pole"
             }
         },
         research_trigger =
@@ -834,4 +850,70 @@ data:extend({
             item = "burner-lab"
         }
     },
+    {
+    type = "technology",
+    name = "steam-power",
+    icon = "__base__/graphics/technology/steam-power.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "pipe"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "pipe-to-ground"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "offshore-pump"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "boiler"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "steam-engine"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "small-electric-pole"
+      }
+    },
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "iron-plate",
+      count = 50
+    }
+  },
+  {
+    type = "technology",
+    name = "oil-processing",
+    icon = "__base__/graphics/technology/oil-processing.png",
+    icon_size = 256,
+    prerequisites = {"oil-gathering", "chemical-processing"},
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "oil-refinery"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "basic-oil-processing"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "solid-fuel-from-petroleum-gas"
+      }
+    },
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "crude-oil"
+    }
+  },
 })
