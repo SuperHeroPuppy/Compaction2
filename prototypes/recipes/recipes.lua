@@ -971,5 +971,20 @@ data:extend {
                 probability = 0.7
             }
         }
+    },
+    {
+        type = "recipe",
+        name = "plated-chest",
+        category = "crafting",
+        enabled = true,
+        energy_required = 1.0,
+        crafting_speed = 0.5,
+        ingredients = {
+            {type = "item", name = "wooden-chest", amount = 1},
+            {type = "item", name = "iron-plate", amount = 2}
+        },
+        results = {
+            {type = "item", name = "iron-chest", amount = 1}
+        }
     }
 }
