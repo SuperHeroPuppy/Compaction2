@@ -1,4 +1,4 @@
-# Compaction2 Mod Locale Files
+# Compaction2 Mod
 
 Welcome to the GitHub repository for **Compaction2** mod! This repository has been created to give the source files for the mod and for used for reporting issues and also contributing to new features. The mod itself can be found on the [Factorio Mod Portal](https://mods.factorio.com/mod/Compaction2). If you find any errors in the translations, feel free to go to -  [Locale Files Repository](https://github.com/LianJordaan/Compaction2-Locale-Files).
 
