@@ -25,31 +25,49 @@ data.raw.technology["logistic-robotics"].prerequisites = {"robotics", "flight-sc
 data.raw.technology["logistic-system"].prerequisites = {"robotics", "flight-science-pack-tech", "utility-science-pack", "computronics-tech"}
 
 
-data.raw.technology["rocket-silo"].prerequisites = {
-    "world-processing-tech",
-    "rocketry",
-    "productivity-module-3",
+if (mods["space-age"]) then
+    data.raw.technology["rocket-silo"].prerequisites = {
+    --"world-processing-tech",
+    --"rocketry",
+    --"productivity-module-3",
     "rocket-control-unit",
     "rocket-fuel",
-    "speed-module-3",
+    --"speed-module-3",
     "concrete",
     "flight-science-pack-tech",
-    "uranium-processing",
-    "kovarex-enrichment-process",
-    "contained-uranium-tech",
-    "smart-battery-tech",
-
+    --"uranium-processing",
+    --"kovarex-enrichment-process",
+    --"contained-uranium-tech",
+    --"smart-battery-tech",
 }
+else
+    data.raw.technology["rocket-silo"].prerequisites = {
+        "world-processing-tech",
+        "rocketry",
+        "productivity-module-3",
+        "rocket-control-unit",
+        "rocket-fuel",
+        "speed-module-3",
+        "concrete",
+        "flight-science-pack-tech",
+        "uranium-processing",
+        "kovarex-enrichment-process",
+        "contained-uranium-tech",
+        "smart-battery-tech",
+    }
+end
 
 data.raw.technology["electronics"].effects = data.raw.technology["electronics"].effects or {}
 local new_effects1 = data.raw.technology["logistics"].effects
 local new_effects2 = data.raw.technology["automation"].effects
 local new_effects3 = data.raw.technology["solar-energy"].effects
 local new_effects4 = data.raw.technology["logistic-science-pack"].effects
+local new_effects5 = data.raw.technology["automation-science-pack"].effects
 table.insert(new_effects1, {type = "unlock-recipe", recipe = "transport-belt"})
 table.insert(new_effects2, {type = "unlock-recipe", recipe = "inserter"})
 table.insert(new_effects3, {type = "unlock-recipe", recipe = "photovoltaic"})
 table.insert(new_effects4, {type = "unlock-recipe", recipe = "lab"})
+table.insert(new_effects5, {type = "unlock-recipe", recipe = "empty-science-pack"})
 
 local function add_science_pack_to_difficulty(difficulty, name, count)
     table.insert(difficulty.unit.ingredients, {name, count})
@@ -77,10 +95,10 @@ end
 
 add_science_pack(data.raw["technology"]["robotics"], "flight-science-pack", 1)
 add_science_pack(data.raw["technology"]["rocket-silo"], "flight-science-pack", 1)
-add_science_pack(data.raw["technology"]["rocket-control-unit"], "flight-science-pack", 1)
 add_science_pack(data.raw["technology"]["logistic-robotics"], "flight-science-pack", 1)
 add_science_pack(data.raw["technology"]["construction-robotics"], "flight-science-pack", 1)
 add_science_pack(data.raw["technology"]["logistic-system"], "flight-science-pack", 1)
+add_science_pack(data.raw["technology"]["atomic-bomb"], "flight-science-pack", 1)
 add_science_pack(data.raw["technology"]["personal-roboport-equipment"], "flight-science-pack", 1)
 add_science_pack(data.raw["technology"]["personal-roboport-mk2-equipment"], "flight-science-pack", 1)
 add_science_pack(data.raw["technology"]["worker-robots-storage-1"], "flight-science-pack", 1)
@@ -93,6 +111,7 @@ add_science_pack(data.raw["technology"]["worker-robots-speed-4"], "flight-scienc
 add_science_pack(data.raw["technology"]["worker-robots-speed-5"], "flight-science-pack", 1)
 add_science_pack(data.raw["technology"]["worker-robots-speed-6"], "flight-science-pack", 1)
 
+
 data.raw.recipe["transport-belt"].enabled = false
 data.raw.recipe["inserter"].enabled = false
 data.raw.recipe["light-armor"].enabled = false
@@ -100,12 +119,16 @@ data.raw.recipe["lab"].enabled = false
 data.raw.recipe["electronic-circuit"].enabled = false
 data.raw.recipe["electric-mining-drill"].enabled = false
 data.raw.recipe["firearm-magazine"].enabled = false
+data.raw.recipe["iron-gear-wheel"].enabled = false
 
 --data.raw.recipe["electronic-circuit"].normal.enabled = false
 --data.raw.recipe["electronic-circuit"].expensive.enabled = false
 --data.raw.recipe["electric-mining-drill"].expensive.enabled = false
 --data.raw.recipe["electric-mining-drill"].normal.enabled = false
 
+
+data.raw.item["rocket-silo"].subgroup = "space-related"
+data.raw.item["cargo-landing-pad"].subgroup = "space-related"
 
 data.raw.recipe["flying-robot-frame"] = {
     type = "recipe",
@@ -118,7 +141,8 @@ data.raw.recipe["flying-robot-frame"] = {
         {type = "item", name = "battery", amount = 2},
         {type = "item", name = "flight-controller", amount = 1},
     },
-    results = {{type = "item", name = "flying-robot-frame", amount = 1}}
+    results = {{type = "item", name = "flying-robot-frame", amount = 1}},
+    allow_productivity = true
 }
 
 data.raw.recipe["landfill"] = {
@@ -131,7 +155,9 @@ data.raw.recipe["landfill"] = {
         {type = "item", name = "gravel", amount =  5},
         {type = "item", name = "crushed-stone", amount =  5},
     }, 
-    results = {{type = "item", name = "landfill", amount = 1}}
+    results = {{type = "item", name = "landfill", amount = 1}},
+    allow_productivity = true
+
 }
 
 data.raw.recipe["offshore-pump"] = {
@@ -145,7 +171,8 @@ data.raw.recipe["offshore-pump"] = {
         {type = "item", name = "iron-plate", amount =  5},
         {type = "item", name = "basic-circuit", amount =  5},
     },
-    results = {{type = "item", name = "offshore-pump", amount = 1}}
+    results = {{type = "item", name = "offshore-pump", amount = 1}},
+    allow_productivity = true
 }
 
 data.raw.recipe["solar-panel"] = {
@@ -159,7 +186,8 @@ data.raw.recipe["solar-panel"] = {
         {type = "item", name = "steel-plate", amount =  5},
         {type = "item", name = "photovoltaic", amount =  8}
     },
-    results = {{type = "item", name = "solar-panel", amount = 1}}
+    results = {{type = "item", name = "solar-panel", amount = 1}},
+    allow_productivity = true
 }
 
 data.raw.recipe["laser-turret"] = {
@@ -173,7 +201,8 @@ data.raw.recipe["laser-turret"] = {
         {type = "item", name = "steel-plate", amount =  20},
         {type = "item", name = "electronic-circuit", amount =  20},
     },
-    results = {{type = "item", name = "laser-turret", amount = 1}}
+    results = {{type = "item", name = "laser-turret", amount = 1}},
+    allow_productivity = true
 }
 
 data.raw.recipe["small-lamp"] = {
@@ -186,7 +215,15 @@ data.raw.recipe["small-lamp"] = {
         {type = "item", name = "iron-plate", amount = 1},
         {type = "item", name = "electronic-circuit", amount = 2},
     },
-    results = {{type = "item", name = "small-lamp", amount = 1}}
+    results = {{type = "item", name = "small-lamp", amount = 1}},
+    allow_productivity = true
+}
+
+data.raw.recipe["rocket-part"].ingredients =
+{
+    {type = "item", name = "rocket-control-unit", amount = 10},
+    {type = "item", name = "low-density-structure", amount = 10},
+    {type = "item", name = "rocket-fuel", amount = 10},
 }
 
 data.raw.recipe["atomic-bomb"].ingredients =

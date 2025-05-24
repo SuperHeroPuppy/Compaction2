@@ -3,6 +3,7 @@ data:extend {
         type = "recipe",
         name = "basic-circuit",
         category = "crafting",
+        enabled = false,
         energy_required = 1.0,
         crafting_speed = 1.0,
         ingredients = {
@@ -11,7 +12,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "basic-circuit", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -26,7 +28,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "smart-battery", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -42,7 +45,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "flight-controller", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -59,7 +63,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "modular-assembler", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -75,7 +80,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "shredder", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -88,7 +94,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "wooden-chunk", amount = 5}
-        }
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -104,7 +111,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "silicon", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -118,7 +126,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "carbon", amount = 1}
-        }
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -132,7 +141,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "carbon-fiber", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -146,7 +156,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "crushed-stone", amount = 3}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -160,7 +171,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "crushed-iron-ore", amount = 5}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -174,7 +186,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "crushed-copper-ore", amount = 5}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -188,7 +201,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "gravel", amount = 5}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -204,7 +218,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "gunpowder", amount = 5}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -214,11 +229,12 @@ data:extend {
         energy_required = 1.2,
         enabled = false,
         ingredients = {
-            {type = "item", name = "sand", amount = 1}
+            {type = "item", name = "gravel", amount = 1}
         },
         results = {
             {type = "item", name = "sand", amount = 2}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -228,7 +244,8 @@ data:extend {
         energy_required = 1.6,
         enabled = false,
         ingredients = {{type="item", name="wood", amount=1}},
-        results = {{type="item", name="charcoal", amount=2}}
+        results = {{type="item", name="charcoal", amount=2}},
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -238,7 +255,8 @@ data:extend {
         energy_required = 1.6,
         enabled = false,
         ingredients = {{type="item", name="sand", amount=1}},
-        results = {{type="item", name="glass", amount=2}}
+        results = {{type="item", name="glass", amount=2}},
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -248,7 +266,8 @@ data:extend {
         energy_required = 1.6,
         enabled = false,
         ingredients = {{type="item", name="glass", amount=2}},
-        results = {{type="item", name="glass-tube", amount=1}}
+        results = {{type="item", name="glass-tube", amount=1}},
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -258,7 +277,8 @@ data:extend {
         energy_required = 1.6,
         enabled = false,
         ingredients = {{type="item", name="glass", amount=5}},
-        results = {{type="item", name="glass-bottle", amount=1}}
+        results = {{type="item", name="glass-bottle", amount=1}},
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -274,7 +294,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "mini-robot", amount = 1}
-        }
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -290,7 +311,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "mini-logistic-robot", amount = 1}
-        }
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -305,7 +327,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "flight-science-pack", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -321,7 +344,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "mini-roboport", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -337,7 +361,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "rocket-casing", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
      {
         type = "recipe",
@@ -353,7 +378,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "rocket-control-unit", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -368,7 +394,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "contained-uranium", amount = 1}
-        }
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -385,7 +412,8 @@ data:extend {
         results = {
             {type = "fluid", name = "aquaelixir", amount = 25},
             {type = "item", name = "steel-scrap", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -403,7 +431,8 @@ data:extend {
         results = {
             {type = "fluid", name = "water", amount = 125},
             {type = "item", name = "dirty-filter", amount = 1}
-        }
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -421,7 +450,8 @@ data:extend {
         results = {
             {type = "fluid", name = "dirty-water", amount = 200},
             {type = "item", name = "clean-filter", amount = 1}
-        }
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -437,7 +467,8 @@ data:extend {
         },
         results = {
             {type = "fluid", name = "diploid-chloride", amount = 200}
-        }
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -454,12 +485,32 @@ data:extend {
         },
         results = {
             {type = "fluid", name = "sulfuric-diploid-chloride", amount = 200}
-        }
+        },
+        allow_productivity = false
+    },
+    {
+        type = "recipe",
+        name = "solid-sulfuric-diploid-chloride",
+        main_product = "solid-sulfuric-diploid-chloride",
+        category = "chemistry",
+        subgroup = "fluid-recipes",
+        order = "z",
+        energy_required = 6.4,
+        enabled = false,
+        ingredients = {
+            {type = "fluid", name = "sulfuric-diploid-chloride", amount = 300},
+            {type = "fluid", name = "water", amount = 10}
+        },
+        results = {
+            {type = "item", name = "solid-sulfuric-diploid-chloride", amount = 20}
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
         name = "empty-science-pack",
         category = "crafting",
+        enabled = false,
         energy_required = 0.3,
         ingredients = {
             {type = "item", name = "iron-plate", amount = 1},
@@ -467,11 +518,12 @@ data:extend {
         },
         results = {
             {type = "item", name = "empty-science-pack", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
-        name = "refined-iron-ore",
+        name = "high-quality-iron-ore",
         category = "advanced-crafting",
         crafting_speed = 0.6,
         energy_required = 3.2,
@@ -480,12 +532,13 @@ data:extend {
             {type = "item", name = "crushed-iron-ore", amount = 15}
         },
         results = {
-            {type = "item", name = "refined-iron-ore", amount = 1}
-        }
+            {type = "item", name = "high-quality-iron-ore", amount = 1}
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
-        name = "refined-copper-ore",
+        name = "high-quality-copper-ore",
         category = "advanced-crafting",
         crafting_speed = 0.6,
         energy_required = 3.2,
@@ -494,42 +547,45 @@ data:extend {
             {type = "item", name = "crushed-copper-ore", amount = 15}
         },
         results = {
-            {type = "item", name = "refined-copper-ore", amount = 1}
-        }
+            {type = "item", name = "high-quality-copper-ore", amount = 1}
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
-        name = "refined-iron-ore-smelting",
+        name = "high-quality-iron-ore-smelting",
         category = "smelting",
         crafting_speed = 2.1,
         energy_required = 4.1,
         enabled = false,
         ingredients = {
-            {type = "item", name = "refined-iron-ore", amount = 1}
+            {type = "item", name = "high-quality-iron-ore", amount = 1}
         },
         results = {
             {type = "item", name = "iron-plate", amount = 5}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
-        name = "refined-copper-ore-smelting",
+        name = "high-quality-copper-ore-smelting",
         category = "smelting",
         crafting_speed = 2.1,
         energy_required = 4.1,
         enabled = false,
         ingredients = {
-            {type = "item", name = "refined-copper-ore", amount = 1}
+            {type = "item", name = "high-quality-copper-ore", amount = 1}
         },
         results = {
             {type = "item", name = "copper-plate", amount = 5}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
         name = "electronic-parts",
         category = "crafting",
-        enabled = true,
+        enabled = false,
         energy_required = 1.0,
         crafting_speed = 0.5,
         ingredients = {
@@ -538,13 +594,14 @@ data:extend {
         },
         results = {
             {type = "item", name = "electronic-parts", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
         name = "metal-bearing",
         category = "crafting",
-        enabled = true,
+        enabled = false,
         energy_required = 1.0,
         crafting_speed = 0.5,
         ingredients = {
@@ -553,7 +610,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "metal-bearing", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -567,7 +625,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "ribbon-cable", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -584,7 +643,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "ai-core", amount = 1}
-        }
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -599,7 +659,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "electronic-memory-chip", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -615,7 +676,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "electronic-microchip", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -632,7 +694,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "advanced-electronic-microchip", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -648,7 +711,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "electronic-storage", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -663,7 +727,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "clean-filter", amount = 1}
-        }
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -679,12 +744,13 @@ data:extend {
         },
         results = {
             {type = "item", name = "photovoltaic", amount = 1}
-        }
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
         name = "bullets",
-        category = "crafting",
+        category = "advanced-crafting",
         enabled = false,
         energy_required = 1.0,
         crafting_speed = 0.5,
@@ -695,7 +761,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "bullets", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -710,7 +777,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "bullet-casing", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -725,7 +793,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "shotgun-hulls", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -740,7 +809,24 @@ data:extend {
         },
         results = {
             {type = "item", name = "magazine", amount = 1}
-        }
+        },
+        allow_productivity = true
+    },
+    {
+        type = "recipe",
+        name = "iron-tip-magazine",
+        category = "crafting",
+        enabled = false,
+        energy_required = 1.0,
+        crafting_speed = 0.5,
+        ingredients = {
+            {type="item", name="iron-plate", amount=2},
+            {type="item", name="copper-plate", amount=1}
+        },
+        results = {
+            {type = "item", name = "iron-tip-magazine", amount = 1}
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -756,7 +842,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "burner-lab", amount = 1}
-        }
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -775,7 +862,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "biological-lab", amount = 1}
-        }
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -789,7 +877,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "processing-fusion-reactor", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -802,7 +891,7 @@ data:extend {
         crafting_speed = 0.5,
         ingredients = {
             {type="item", name="azure-crystal", amount=1},
-            {type="item", name="solid-diploid-chloride", amount=5}
+            {type="item", name="solid-sulfuric-diploid-chloride", amount=5}
         },
         results = {
             {
@@ -811,7 +900,8 @@ data:extend {
                 amount = 2,
                 probability = 0.4
             }
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -824,7 +914,7 @@ data:extend {
         crafting_speed = 0.5,
         ingredients = {
             {type="item", name="fluorite-crystal", amount=1},
-            {type="item", name="solid-diploid-chloride", amount=5}
+            {type="item", name="solid-sulfuric-diploid-chloride", amount=5}
         },
         results = {
             {
@@ -833,7 +923,8 @@ data:extend {
                 amount = 5,
                 probability = 0.2
             }
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -846,7 +937,7 @@ data:extend {
         crafting_speed = 0.5,
         ingredients = {
             {type="item", name="pyrite-crystal", amount=1},
-            {type="item", name="solid-diploid-chloride", amount=5}
+            {type="item", name="solid-sulfuric-diploid-chloride", amount=5}
         },
         results = {
             {
@@ -855,7 +946,8 @@ data:extend {
                 amount = 1,
                 probability = 0.8
             }
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -881,7 +973,8 @@ data:extend {
                 amount = 10,
                 probability = 0.2
             }
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -895,12 +988,13 @@ data:extend {
         },
         results = {
             {type = "item", name = "gold-ingot", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
         name = "gold-foil",
-        category = "crafting",
+        category = "advanced-crafting",
         enabled = false,
         energy_required = 1.0,
         crafting_speed = 0.5,
@@ -909,7 +1003,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "gold-foil", amount = 5}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -923,12 +1018,13 @@ data:extend {
         },
         results = {
             {type = "item", name = "iron-mesh", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
         name = "gold-mesh",
-        category = "crafting",
+        category = "advanced-crafting",
         enabled = false,
         energy_required = 1.0,
         crafting_speed = 0.5,
@@ -938,7 +1034,8 @@ data:extend {
         },
         results = {
             {type = "item", name = "gold-mesh", amount = 1}
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -970,7 +1067,8 @@ data:extend {
                 amount = 10,
                 probability = 0.7
             }
-        }
+        },
+        allow_productivity = true
     },
     {
         type = "recipe",
@@ -985,6 +1083,39 @@ data:extend {
         },
         results = {
             {type = "item", name = "iron-chest", amount = 1}
-        }
-    }
+        },
+        allow_productivity = false
+    },
+    {
+        type = "recipe",
+        name = "space-supplies-science",
+        category = "advanced-crafting",
+        enabled = false,
+        energy_required = 1.0,
+        crafting_speed = 0.5,
+        ingredients = {
+            {type="item", name="carbon", amount=1},
+            {type="item", name="iron-plate", amount=10},
+            {type = "fluid", name = "water", amount = 20}
+        },
+        results = {
+            {type = "item", name = "space-supplies-science", amount = 3}
+        },
+        allow_productivity = true
+    },
+    {
+        type = "recipe",
+        name = "iron-tip-magazine",
+        category = "advanced-crafting",
+        enabled = true,
+        energy_required = 1.0,
+        crafting_speed = 0.5,
+        ingredients = {
+            {type="item", name="iron-plate", amount=10},
+        },
+        results = {
+            {type = "item", name = "iron-tip-magazine", amount = 3}
+        },
+        allow_productivity = true
+    },
 }

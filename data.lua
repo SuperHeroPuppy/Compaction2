@@ -18,7 +18,7 @@ require("prototypes/entity/logistic-bot");
 require("prototypes/entity/construction-bot");
 require("prototypes/entity/requester-chest");
 require("prototypes/entity/storage-chest");
-require("prototypes/entity/growing-chamber");
+require("prototypes/entity/green-house");
 require("prototypes/entity/burner-lab");
 require("prototypes/entity/biological-lab");
 require("prototypes/entity/fusion-reactor");

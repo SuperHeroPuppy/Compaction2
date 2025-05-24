@@ -1,10 +1,12 @@
+local item_sounds = require("__base__.prototypes.item_sounds")
+
 data:extend{
     {
         type = "item",
         name = "smart-battery",
         icon = "__Compaction2__/graphics/icons/smart-battery.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "raw-material",
+        subgroup = "intermediate-product",
         order = "i[battery]",
         stack_size = 35
     },
@@ -28,7 +30,7 @@ data:extend{
                 { size = 64, filename = "__Compaction2__/graphics/icons/woodchunks/chunk-wood-3.png", scale = 0.25, mipmap_count = 4 }
             },
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Assemblers-items",
+        subgroup = "raw-material",
         fuel_value = "1MJ",
         fuel_category = "chemical",
         order = "a",
@@ -45,7 +47,7 @@ data:extend{
                 { size = 64, filename = "__Compaction2__/graphics/icons/crushed-ore/pile-dust-crushed-stone-ore-3.png", scale = 0.25, mipmap_count = 4 }
             },
         icon_size = 64, icon_mipmaps = 1,
-        subgroup = "Shredder-subgroup",
+        subgroup = "shredder-subgroup",
         order = "a",
         stack_size = 100
     },
@@ -60,7 +62,7 @@ data:extend{
                 { size = 64, filename = "__Compaction2__/graphics/icons/crushed-ore/pile-dust-crushed-iron-ore-3.png", scale = 0.25, mipmap_count = 4 }
             },
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Shredder-subgroup",
+        subgroup = "shredder-subgroup",
         order = "d",
         stack_size = 100
     },
@@ -75,7 +77,7 @@ data:extend{
                 { size = 64, filename = "__Compaction2__/graphics/icons/crushed-ore/pile-dust-crushed-copper-ore-3.png", scale = 0.25, mipmap_count = 4 }
             },
         icon_size = 64, icon_mipmaps = 1,
-        subgroup = "Shredder-subgroup",
+        subgroup = "shredder-subgroup",
         order = "f",
         stack_size = 100
     },
@@ -84,7 +86,7 @@ data:extend{
         name = "gravel",
         icon = "__Compaction2__/graphics/icons/gravel.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Shredder-subgroup",
+        subgroup = "shredder-subgroup",
         order = "b",
         stack_size = 250
     },
@@ -94,7 +96,7 @@ data:extend{
         icon = "__Compaction2__/graphics/icons/sand.png",
         icon_size = 64, icon_mipmaps = 4,
         order = "c",
-        subgroup = "Shredder-subgroup",
+        subgroup = "shredder-subgroup",
         stack_size = 250
     },
     {
@@ -111,7 +113,7 @@ data:extend{
                 { size = 64, filename = "__Compaction2__/graphics/icons/glass/part-glass-6.png", scale = 0.25, mipmap_count = 4 }
             },
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Assemblers-items",
+        subgroup = "raw-material",
         order = "c",
         stack_size = 250
     },
@@ -120,7 +122,7 @@ data:extend{
         name = "glass-tube",
         icon = "__Compaction2__/graphics/icons/glass/glass-tube.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Assemblers-items",
+        subgroup = "intermediate-product",
         order = "c",
         stack_size = 15
     },
@@ -129,7 +131,7 @@ data:extend{
         name = "glass-bottle",
         icon = "__Compaction2__/graphics/icons/glass/glass-bottle.png",
         icon_size = 1024, icon_mipmaps = 1,
-        subgroup = "Assemblers-items",
+        subgroup = "intermediate-product",
         order = "c",
         stack_size = 50
     },
@@ -140,7 +142,7 @@ data:extend{
         icon_size = 64, icon_mipmaps = 4,
         fuel_value = "20MJ",
         fuel_category = "chemical",
-        subgroup = "processing",
+        subgroup = "intermediate-product",
         order = "a",
         stack_size = 150
     },
@@ -155,7 +157,7 @@ data:extend{
                 { size = 64, filename = "__Compaction2__/graphics/icons/gunpowder/gunpowder-3.png", scale = 0.25, mipmap_count = 4 }
             },
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "processing",
+        subgroup = "intermediate-product",
         stack_size = 150
     },
     {
@@ -176,6 +178,14 @@ data:extend{
         type = "item",
         name = "solid-diploid-chloride",
         icon = "__Compaction2__/graphics/icons/solid-diploid-chloride.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "item-growing",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "solid-sulfuric-diploid-chloride",
+        icon = "__Compaction2__/graphics/icons/solid-sulfuric-diploid-chloride.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "item-growing",
         stack_size = 100
@@ -243,7 +253,7 @@ data:extend{
         name = "nugget-metal",
         icon = "__Compaction2__/graphics/icons/metal-nugget.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "processing",
+        subgroup = "raw-resource",
         stack_size = 500
     },
     {
@@ -251,7 +261,7 @@ data:extend{
         name = "nugget-gold",
         icon = "__Compaction2__/graphics/icons/nugget-gold.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "processing",
+        subgroup = "raw-resource",
         stack_size = 500
     },
     {
@@ -259,7 +269,7 @@ data:extend{
         name = "gold-ingot",
         icon = "__Compaction2__/graphics/icons/gold-ingot.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "processing",
+        subgroup = "raw-material",
         stack_size = 250
     },
     {
@@ -267,7 +277,7 @@ data:extend{
         name = "gold-foil",
         icon = "__Compaction2__/graphics/icons/gold-foil.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "processing",
+        subgroup = "raw-material",
         stack_size = 50
     },
     {
@@ -275,7 +285,7 @@ data:extend{
         name = "iron-mesh",
         icon = "__Compaction2__/graphics/icons/iron-mesh.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "processing",
+        subgroup = "intermediate-product",
         stack_size = 250
     },
     {
@@ -283,7 +293,7 @@ data:extend{
         name = "gold-mesh",
         icon = "__Compaction2__/graphics/icons/gold-mesh.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "processing",
+        subgroup = "intermediate-product",
         stack_size = 250
     },
     {
@@ -297,7 +307,7 @@ data:extend{
                 { size = 64, filename = "__Compaction2__/graphics/icons/silicon/silicon-3.png", scale = 0.25, mipmap_count = 4 }
             },
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "processing",
+        subgroup = "intermediate-product",
         order = "c",
         stack_size = 60
     },
@@ -306,8 +316,8 @@ data:extend{
         name = "carbon-fiber",
         icon = "__Compaction2__/graphics/icons/carbon-fiber.png",
         icon_size = 64, icon_mipmaps = 1,
-        subgroup = "processing",
-        order = "b",
+        subgroup = "intermediate-product",
+        order = "a",
         stack_size = 50
     },
     {
@@ -324,7 +334,7 @@ data:extend{
         name = "rocket-control-unit",
         icon = "__Compaction2__/graphics/icons/rocket-control-unit.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Rocket-Refinery",
+        subgroup = "space-material",
         order = "cd",
         stack_size = 10
     },
@@ -333,7 +343,7 @@ data:extend{
         name = "contained-uranium",
         icon = "__Compaction2__/graphics/icons/contained-uranium.png",
         icon_size = 64, icon_mipmaps = 1,
-        subgroup = "intermediate-product",
+        subgroup = "uranium-processing",
         order = "z",
         stack_size = 5
     },
@@ -359,19 +369,19 @@ data:extend{
     },
     {
         type = "item",
-        name = "refined-iron-ore",
+        name = "high-quality-iron-ore",
         icon = "__base__/graphics/icons/iron-ore.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Assemblers-items",
+        subgroup = "raw-resource",
         order = "z",
         stack_size = 50
     },
     {
         type = "item",
-        name = "refined-copper-ore",
+        name = "high-quality-copper-ore",
         icon = "__base__/graphics/icons/copper-ore.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Assemblers-items",
+        subgroup = "raw-resource",
         order = "z",
         stack_size = 50
     },
@@ -436,7 +446,7 @@ data:extend{
                 { size = 64, filename = "__Compaction2__/graphics/icons/charcoal/charcoal-3.png", scale = 0.25, mipmap_count = 4 },
             },
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Assemblers-items",
+        subgroup = "raw-material",
         fuel_value = "0.5MJ",
         fuel_category = "chemical",
         order = "d",
@@ -453,7 +463,7 @@ data:extend{
                 { size = 64, filename = "__Compaction2__/graphics/icons/organs/biter-organs-3.png", scale = 0.25, mipmap_count = 4 },
             },
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Organs",
+        subgroup = "organs",
         stack_size = 60
     },
     {
@@ -467,7 +477,7 @@ data:extend{
                 { size = 64, filename = "__Compaction2__/graphics/icons/organs/eggs-3.png", scale = 0.25, mipmap_count = 4 },
             },
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Organs",
+        subgroup = "organs",
         stack_size = 60
     },
     {
@@ -481,7 +491,7 @@ data:extend{
                 { size = 64, filename = "__Compaction2__/graphics/icons/seeds/seeds-3.png", scale = 0.25, mipmap_count = 4 },
             },
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Organs",
+        subgroup = "organs",
         stack_size = 100,
         fuel_value = "0.5MJ",
         fuel_category = "chemical"
@@ -496,5 +506,243 @@ data:extend{
         order = data.raw.item.lab.order,
         stack_size = data.raw.item.lab.stack_size,
         place_result = "burner-lab",
+    },
+    {
+        type = "ammo",
+        name = "firearm-magazine",
+        icon = "__base__/graphics/icons/firearm-magazine.png",
+        ammo_category = "bullet",
+        ammo_type =
+        {
+        action =
+        {
+            {
+            type = "direct",
+            action_delivery =
+            {
+                {
+                type = "instant",
+                source_effects =
+                {
+                    {
+                    type = "create-explosion",
+                    entity_name = "explosion-gunshot"
+                    }
+                },
+                target_effects =
+                {
+                    {
+                    type = "create-entity",
+                    entity_name = "explosion-hit",
+                    offsets = {{0, 1}},
+                    offset_deviation = {{-0.5, -0.5}, {0.5, 0.5}}
+                    },
+                    {
+                    type = "damage",
+                    damage = {amount = 5 * 2, type = "physical"}
+                    },
+                    {
+                    type = "activate-impact",
+                    deliver_category = "bullet"
+                    }
+                }
+                }
+            }
+            }
+        }
+        },
+        magazine_size = 20,
+        subgroup = "ammo",
+        order = "a[basic-clips]-a[firearm-magazine]",
+        inventory_move_sound = item_sounds.ammo_small_inventory_move,
+        pick_sound = item_sounds.ammo_small_inventory_pickup,
+        drop_sound = item_sounds.ammo_small_inventory_move,
+        stack_size = 100,
+        weight = 10*kg
+    },
+    {
+        type = "ammo",
+        name = "iron-tip-magazine",
+        icon = "__base__/graphics/icons/ammo-category/bullet.png",
+        ammo_category = "bullet",
+        ammo_type =
+        {
+        action =
+        {
+            {
+            type = "direct",
+            action_delivery =
+            {
+                {
+                type = "instant",
+                source_effects =
+                {
+                    {
+                    type = "create-explosion",
+                    entity_name = "explosion-gunshot"
+                    }
+                },
+                target_effects =
+                {
+                    {
+                    type = "create-entity",
+                    entity_name = "explosion-hit",
+                    offsets = {{0, 1}},
+                    offset_deviation = {{-0.5, -0.5}, {0.5, 0.5}}
+                    },
+                    {
+                    type = "damage",
+                    damage = {amount = 1, type = "physical"}
+                    },
+                    {
+                    type = "activate-impact",
+                    deliver_category = "bullet"
+                    }
+                }
+                }
+            }
+            }
+        }
+        },
+        magazine_size = 5,
+        subgroup = "ammo",
+        order = "a[basic-clips]-a[firearm-magazine]",
+        inventory_move_sound = item_sounds.ammo_small_inventory_move,
+        pick_sound = item_sounds.ammo_small_inventory_pickup,
+        drop_sound = item_sounds.ammo_small_inventory_move,
+        stack_size = 5,
+        weight = 3*kg
+    },
+    {
+        type = "ammo",
+        name = "piercing-rounds-magazine",
+        icon = "__base__/graphics/icons/piercing-rounds-magazine.png",
+        ammo_category = "bullet",
+        ammo_type =
+        {
+        action =
+        {
+            type = "direct",
+            action_delivery =
+            {
+            type = "instant",
+            source_effects =
+            {
+                type = "create-explosion",
+                entity_name = "explosion-gunshot"
+            },
+            target_effects =
+            {
+                {
+                type = "create-entity",
+                entity_name = "explosion-hit",
+                offsets = {{0, 1}},
+                offset_deviation = {{-0.5, -0.5}, {0.5, 0.5}}
+                },
+                {
+                type = "damage",
+                damage = {amount = 8 * 3, type = "physical"}
+                },
+                {
+                type = "activate-impact",
+                deliver_category = "bullet"
+                }
+            }
+            }
+        }
+        },
+        magazine_size = 30,
+        subgroup = "ammo",
+        order = "a[basic-clips]-b[piercing-rounds-magazine]",
+        inventory_move_sound = item_sounds.ammo_small_inventory_move,
+        pick_sound = item_sounds.ammo_small_inventory_pickup,
+        drop_sound = item_sounds.ammo_small_inventory_move,
+        stack_size = 100,
+        weight = 20*kg
+    },
+    {
+        type = "ammo",
+        name = "uranium-rounds-magazine",
+        icon = "__base__/graphics/icons/uranium-rounds-magazine.png",
+        pictures =
+        {
+        layers =
+        {
+            {
+            size = 64,
+            filename = "__base__/graphics/icons/uranium-rounds-magazine.png",
+            scale = 0.5,
+            mipmap_count = 4
+            },
+            {
+            draw_as_light = true,
+            size = 64,
+            filename = "__base__/graphics/icons/uranium-rounds-magazine-light.png",
+            scale = 0.5
+            }
+        }
+        },
+        ammo_category = "bullet",
+        ammo_type =
+        {
+        action =
+        {
+            type = "direct",
+            action_delivery =
+            {
+            type = "instant",
+            source_effects =
+            {
+                type = "create-explosion",
+                entity_name = "explosion-gunshot"
+            },
+            target_effects =
+            {
+                {
+                type = "create-entity",
+                entity_name = "explosion-hit",
+                offsets = {{0, 1}},
+                offset_deviation = {{-0.5, -0.5}, {0.5, 0.5}}
+                },
+                {
+                type = "damage",
+                damage = {amount = 24 * 2, type = "physical"}
+                },
+                {
+                type = "activate-impact",
+                deliver_category = "bullet"
+                }
+            }
+            }
+        }
+        },
+        magazine_size = 10,
+        subgroup = "ammo",
+        order = "a[basic-clips]-c[uranium-rounds-magazine]",
+        inventory_move_sound = item_sounds.ammo_small_inventory_move,
+        pick_sound = item_sounds.ammo_small_inventory_pickup,
+        drop_sound = item_sounds.ammo_small_inventory_move,
+        stack_size = 100,
+        weight = 40*kg
+    },
+    {
+        type = "item",
+        name = "space-supplies-science",
+        icon = "__Compaction2__/graphics/icons/space-supplies.png",
+        icon_size = 64,
+        subgroup = "space-material",
+        order = "d",
+        stack_size = 15,
+        weight = 1 * tons,
+        rocket_launch_products = {{type = "item", name = "space-science-pack", amount = 1000}},
+        send_to_orbit_mode = "automated"
+    },
+    {
+        type = "item",
+        name = "satellite",
+        icon = "__base__/graphics/icons/satellite.png",
+        subgroup = "space-material",
+        order = "d[rocket-parts]-e[satellite]",
+        stack_size = 1,
     },
 }

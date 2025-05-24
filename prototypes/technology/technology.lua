@@ -332,7 +332,7 @@ data:extend({
         name = "carbon-processing-tech",
         icon = "__Compaction2__/graphics/research/carbon.png",
         localised_description = "Carbon! There's carbon now! Biscuits this is added in Space Age lol.",
-        icon_size = 64,
+        icon_size = 256,
         effects = {
             { type = "unlock-recipe", recipe = "carbon" },
             { type = "unlock-recipe", recipe = "carbon-fiber" },
@@ -410,10 +410,10 @@ data:extend({
         effects = {
             { type = "unlock-recipe", recipe = "crushed-iron-ore" },
             { type = "unlock-recipe", recipe = "crushed-copper-ore" },
-            { type = "unlock-recipe", recipe = "refined-iron-ore" },
-            { type = "unlock-recipe", recipe = "refined-copper-ore" },
-            { type = "unlock-recipe", recipe = "refined-iron-ore-smelting" },
-            { type = "unlock-recipe", recipe = "refined-copper-ore-smelting" },
+            { type = "unlock-recipe", recipe = "high-quality-iron-ore" },
+            { type = "unlock-recipe", recipe = "high-quality-copper-ore" },
+            { type = "unlock-recipe", recipe = "high-quality-iron-ore-smelting" },
+            { type = "unlock-recipe", recipe = "high-quality-copper-ore-smelting" },
         },
         prerequisites = {
             "automation",
@@ -466,6 +466,7 @@ data:extend({
             { type = "unlock-recipe", recipe = "crystal" },
             { type = "unlock-recipe", recipe = "diploid-chloride" },
             { type = "unlock-recipe", recipe = "sulfuric-diploid-chloride" },
+            { type = "unlock-recipe", recipe = "solid-sulfuric-diploid-chloride" },
             { type = "unlock-recipe", recipe = "nugget-processing" }
         },
         prerequisites = {
@@ -492,9 +493,9 @@ data:extend({
         name = "greenhouse-tech",
         icon = "__Compaction2__/graphics/research/greenhouse-processing.png",
         localised_description = "uUlock the ability to grow seeds like trees.",
-        icon_size = 64,
+        icon_size = 256,
         effects = {
-            { type = "unlock-recipe", recipe = "growing-chamber" },
+            { type = "unlock-recipe", recipe = "green-house" },
             { type = "unlock-recipe", recipe = "greenhouse" },
         },
         prerequisites = {
@@ -519,10 +520,10 @@ data:extend({
     {
         type = "technology",
         name = "biter-biological-processing-tech",
-        icon = "__base__/graphics/icons/biter-spawner.png",
+        icon = "__Compaction2__/graphics/research/bio-lab-processing.png",
         localised_description =
         "Advanced biological processing techniques using biter organs and other biological materials.",
-        icon_size = 64,
+        icon_size = 256,
         effects = {
             { type = "unlock-recipe", recipe = "biological-lab" },
         },
@@ -784,7 +785,7 @@ data:extend({
         name = "rocket-control-unit",
         icon = "__Compaction2__/graphics/research/rocket-control-unit.png",
         localised_description = "Archived, I'm Back.",
-        icon_size = 64,
+        icon_size = 256,
         effects = {
             { type = "unlock-recipe", recipe = "rocket-control-unit" },
         },
@@ -792,7 +793,9 @@ data:extend({
             "utility-science-pack",
             "uranium-processing",
             "kovarex-enrichment-process",
-            "contained-uranium-tech"
+            "contained-uranium-tech",
+            "production-science-pack",
+            "flight-science-pack"
         },
         unit =
         {
@@ -809,15 +812,34 @@ data:extend({
     },
     {
         type = "technology",
+        name = "intermediate-products",
+        icon = "__Compaction2__/graphics/research/intermediate-products.png",
+        localised_description = "Unlock the basic intermediates.",
+        icon_size = 256,
+        effects = {
+            { type = "unlock-recipe", recipe = "basic-circuit" },
+            { type = "unlock-recipe", recipe = "electronic-parts" },
+            { type = "unlock-recipe", recipe = "copper-cable" },
+            { type = "unlock-recipe", recipe = "iron-stick" },
+            { type = "unlock-recipe", recipe = "iron-gear-wheel" },
+            { type = "unlock-recipe", recipe = "metal-bearing" },
+        },
+        prerequisites = {},
+        research_trigger =
+        {
+            type = "craft-item",
+            item = "iron-plate",
+            count = 5,
+        },
+    },
+    {
+        type = "technology",
         name = "electronics",
         icon = "__base__/graphics/technology/electronics.png",
         icon_size = 256,
+        prerequisites = { "intermediate-products" },
         effects =
         {
-            {
-                type = "unlock-recipe",
-                recipe = "copper-cable"
-            },
             {
                 type = "unlock-recipe",
                 recipe = "electronic-circuit"
@@ -851,69 +873,89 @@ data:extend({
         }
     },
     {
-    type = "technology",
-    name = "steam-power",
-    icon = "__base__/graphics/technology/steam-power.png",
-    icon_size = 256,
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "pipe"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "pipe-to-ground"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "offshore-pump"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "boiler"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "steam-engine"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "small-electric-pole"
-      }
+        type = "technology",
+        name = "steam-power",
+        icon = "__base__/graphics/technology/steam-power.png",
+        icon_size = 256,
+        effects =
+        {
+            {
+                type = "unlock-recipe",
+                recipe = "pipe"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "pipe-to-ground"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "offshore-pump"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "boiler"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "steam-engine"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "small-electric-pole"
+            }
+        },
+        research_trigger =
+        {
+            type = "craft-item",
+            item = "iron-plate",
+            count = 50
+        }
     },
-    research_trigger =
     {
-      type = "craft-item",
-      item = "iron-plate",
-      count = 50
-    }
-  },
-  {
-    type = "technology",
-    name = "oil-processing",
-    icon = "__base__/graphics/technology/oil-processing.png",
-    icon_size = 256,
-    prerequisites = {"oil-gathering", "chemical-processing"},
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "oil-refinery"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "basic-oil-processing"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "solid-fuel-from-petroleum-gas"
-      }
+        type = "technology",
+        name = "oil-processing",
+        icon = "__base__/graphics/technology/oil-processing.png",
+        icon_size = 256,
+        prerequisites = { "oil-gathering", "chemical-processing" },
+        effects =
+        {
+            {
+                type = "unlock-recipe",
+                recipe = "oil-refinery"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "basic-oil-processing"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "solid-fuel-from-petroleum-gas"
+            }
+        },
+        research_trigger =
+        {
+            type = "mine-entity",
+            entity = "crude-oil"
+        }
     },
-    research_trigger =
     {
-      type = "mine-entity",
-      entity = "crude-oil"
-    }
-  },
+        type = "technology",
+        name = "space-science-pack",
+        icon = "__base__/graphics/technology/space-science-pack.png",
+        icon_size = 256,
+        essential = true,
+        effects =
+        {
+            {
+                type = "unlock-recipe",
+                recipe = "space-supplies-science"
+            },
+        },
+        research_trigger =
+        {
+            type = "send-item-to-orbit",
+            item = "satellite"
+        },
+        prerequisites = { "rocket-silo" }
+    },
 })

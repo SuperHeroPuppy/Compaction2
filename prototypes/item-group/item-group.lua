@@ -1,70 +1,51 @@
 data:extend{
 	{
-		type = "item-group",
-		name = "Assemblers",
-		order = "z",
-		icon = "__Compaction2__/graphics/icons/automationG.png",
-		icon_size = 256
-	},
-	{
-		type = "item-group",
-		name = "Alerts-Group",
-		order = "zz",
-		icon = "__Compaction2__/graphics/alerts/icon.png",
-		icon_size = 64
+		type = "item-subgroup",
+		name = "alerts-special",
+		group = "signals",
+		order = "z"
 	},
 	{
 		type = "item-subgroup",
-		name = "Alerts",
-		group = "Alerts-Group",
-		order = "1"
-	},
-	{
-		type = "item-subgroup",
-		name = "Assemblers-items",
-		group = "Assemblers",
-		order = "a"
-	},
-	{
-		type = "item-subgroup",
-		name = "Shredder-subgroup",
-		group = "Assemblers",
+		name = "shredder-subgroup",
+		group = "intermediate-products",
 		order = "b"
 	},
 	{
 		type = "item-subgroup",
-		name = "processing",
-		group = "Assemblers",
-		order = "c"
-	},
-	{
-		type = "item-subgroup",
 		name = "item-growing",
-		group = "Assemblers",
+		group = "intermediate-products",
 		order = "b"
 	},
 	{
 		type = "item-subgroup",
 		name = "scrap",
-		group = "Assemblers",
+		group = "intermediate-products",
 		order = "h"
 	},
 	{
 		type = "item-subgroup",
-		name = "Rocket-Refinery",
-		group = "Assemblers",
-		order = "i"
-	},
-	{
-		type = "item-subgroup",
-		name = "Parts",
+		name = "organs",
 		group = "intermediate-products",
-		order = "f"
+		order = "z"
 	},
 	{
+		type = "item-group",
+		name = "space",
+		order = "d",
+		icon = "__Compaction2__/graphics/item-group/space.png",
+		icon_size = 128,
+  	},
+	{
 		type = "item-subgroup",
-		name = "Organs",
-		group = "Assemblers",
-		order = "z"
-	}
+		name = "space-material",
+		group = "space",
+		order = "a"
+  	},
+	{
+		type = "item-subgroup",
+		name = "space-related",
+		group = "space",
+		order = "b"
+	},
 }

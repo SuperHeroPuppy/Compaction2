@@ -1,29 +1,29 @@
 data:extend{
     {
         type = "item",
-        name = "basic-circuit",
-        icon = "__Compaction2__/graphics/icons/basic-circuit.png",
-        icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Parts",
-        order = "a",
-        stack_size = 100
-    },
-    {
-        type = "item",
         name = "electronic-parts",
         icon = "__Compaction2__/graphics/icons/part-electronic.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Parts",
-        order = "b",
+        subgroup = "intermediate-product",
+        order = "a[circuits]-a[electronic-circuit]",
         stack_size = 55
+    },
+    {
+        type = "item",
+        name = "basic-circuit",
+        icon = "__Compaction2__/graphics/icons/basic-circuit.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "intermediate-product",
+        order = "a[circuits]-a[electronic-circuit]",
+        stack_size = 100
     },
     {
         type = "item",
         name = "metal-bearing",
         icon = "__Compaction2__/graphics/icons/part-metal-bearing.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Parts",
-        order = "c",
+        subgroup = "intermediate-product",
+        order = "a",
         stack_size = 50
     },
     {
@@ -31,7 +31,7 @@ data:extend{
         name = "clean-filter",
         icon = "__Compaction2__/graphics/icons/part-filter-simple.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Parts",
+        subgroup = "intermediate-product",
         order = "d",
         stack_size = 5
     },
@@ -40,7 +40,7 @@ data:extend{
         name = "dirty-filter",
         icon = "__Compaction2__/graphics/icons/part-filter-simple-clean.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Parts",
+        subgroup = "intermediate-product",
         order = "d",
         stack_size = 15
     },
@@ -54,7 +54,7 @@ data:extend{
             { size = 64, filename = "__Compaction2__/graphics/icons/photovoltaic/photovoltaic-cell-2.png", scale = 0.25, mipmap_count = 4 }
         },
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Parts",
+        subgroup = "intermediate-product",
         order = "e",
         stack_size = 50
     },
@@ -69,7 +69,7 @@ data:extend{
                 { size = 64, filename = "__Compaction2__/graphics/icons/electronics/ribbon-cable-3.png", scale = 0.25, mipmap_count = 4 },
             },
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Parts",
+        subgroup = "intermediate-product",
         order = "f",
         stack_size = 60
     },
@@ -78,7 +78,7 @@ data:extend{
         name = "electronic-memory-chip",
         icon = "__Compaction2__/graphics/icons/electronics/electronic-memory.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Parts",
+        subgroup = "intermediate-product",
         order = "g",
         stack_size = 5
     },
@@ -87,7 +87,7 @@ data:extend{
         name = "electronic-microchip",
         icon = "__Compaction2__/graphics/icons/electronics/electronic-microchip.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Parts",
+        subgroup = "intermediate-product",
         order = "h",
         stack_size = 5
     },
@@ -96,7 +96,7 @@ data:extend{
         name = "advanced-electronic-microchip",
         icon = "__Compaction2__/graphics/icons/electronics/advanced-electronic-microchip.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Parts",
+        subgroup = "intermediate-product",
         order = "i",
         stack_size = 5
     },
@@ -105,7 +105,7 @@ data:extend{
         name = "electronic-storage",
         icon = "__Compaction2__/graphics/icons/electronics/electronic-storage.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Parts",
+        subgroup = "intermediate-product",
         order = "i",
         stack_size = 5
     },
@@ -114,7 +114,7 @@ data:extend{
         name = "ai-core",
         icon = "__Compaction2__/graphics/icons/electronics/ai-core.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "Parts",
+        subgroup = "intermediate-product",
         order = "z",
         stack_size = 5
     },

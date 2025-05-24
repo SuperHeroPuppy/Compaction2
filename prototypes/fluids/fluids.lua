@@ -23,7 +23,7 @@ data:extend{
         flow_color = {r=61, g=49, b=15},
         icon = "__Compaction2__/graphics/icons/dirty-water.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "fluid-recipes",
+        subgroup = "fluid",
         order = "z",
         stack_size = 1500
     },
@@ -37,7 +37,7 @@ data:extend{
         flow_color = {r=99, g=29, b=5},
         icon = "__Compaction2__/graphics/icons/diploid-chloride.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "fluid-recipes",
+        subgroup = "fluid",
         order = "z",
         stack_size = 5000
     },
@@ -51,7 +51,7 @@ data:extend{
         flow_color = {r=99, g=29, b=5},
         icon = "__Compaction2__/graphics/icons/sulfuric-diploid-chloride.png",
         icon_size = 64, icon_mipmaps = 4,
-        subgroup = "fluid-recipes",
+        subgroup = "fluid",
         order = "z",
         stack_size = 1500
     },

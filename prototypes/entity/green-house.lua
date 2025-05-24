@@ -1,7 +1,7 @@
 data:extend({
   {
     type = "assembling-machine",
-    name = "growing-chamber",
+    name = "green-house",
     max_health = 500,
     flags = { "placeable-neutral", "player-creation" },
     dying_explosion = "big-explosion",
@@ -9,7 +9,7 @@ data:extend({
     selection_box = { { -3.5, -3.5 }, { 3.5, 3.5 } },
     allowed_effects = { "consumption", "speed", "pollution", "productivity" },
     module_specification = { module_slots = 5, },
-    minable = { mining_time = 0.3, result = "growing-chamber" },
+    minable = { mining_time = 0.3, result = "green-house" },
     energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
@@ -18,9 +18,20 @@ data:extend({
     energy_usage = "144800W",
     ingredient_count = 4,
     crafting_speed = 1,
-    crafting_categories = { "growing-crafting" },
-    icon = "__Compaction2__/graphics/icons/growing-chamber.png",
+    crafting_categories = { "green-house" },
+    icon = "__Compaction2__/graphics/icons/green-house.png",
     icon_size = 64,
+    circuit_wire_max_distance = default_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions.create_vector
+    (
+      universal_connector_template,
+      {
+        { variation =  1, main_offset = util.by_pixel( 89.5, -108.75), shadow_offset = util.by_pixel( 89.5, -108.75), show_shadow = true },
+        { variation =  1, main_offset = util.by_pixel( 89.5, -108.75), shadow_offset = util.by_pixel( 89.5, -108.75), show_shadow = true },
+        { variation =  1, main_offset = util.by_pixel( 89.5, -108.75), shadow_offset = util.by_pixel( 89.5, -108.75), show_shadow = true },
+        { variation =  1, main_offset = util.by_pixel( 89.5, -108.75), shadow_offset = util.by_pixel( 89.5, -108.75), show_shadow = true },
+      }
+    ),
     fluid_boxes = {
       {
         production_type = "input",
@@ -42,7 +53,7 @@ data:extend({
       animation = {
         layers = {
           {
-            filename = "__Compaction2__/graphics/entity/growing-chamber/growing-chamber.png",
+            filename = "__Compaction2__/graphics/entity/green-house/green-house.png",
             priority = "high",
             width = 512,
             height = 512,
@@ -50,7 +61,7 @@ data:extend({
             scale = 0.5,
           },
           {
-            filename = "__Compaction2__/graphics/entity/growing-chamber/growing-chamber-sh.png",
+            filename = "__Compaction2__/graphics/entity/green-house/green-house-sh.png",
             priority = "high",
             width = 512,
             height = 512,
@@ -65,7 +76,7 @@ data:extend({
         {
           draw_as_light = true,
           animation = {
-            filename = "__Compaction2__/graphics/entity/growing-chamber/growing-chamber-light.png",
+            filename = "__Compaction2__/graphics/entity/green-house/green-house-light.png",
             width = 512,
             height = 512,
             frame_count = 1,
@@ -76,7 +87,7 @@ data:extend({
         },
         {
           animation = {
-            filename = "__Compaction2__/graphics/entity/growing-chamber/growing-chamber-working.png",
+            filename = "__Compaction2__/graphics/entity/green-house/green-house-working.png",
             width = 512,
             height = 512,
             frame_count = 10,
@@ -89,7 +100,7 @@ data:extend({
     },
     working_sound = {
       sound = {
-        filename = "__Compaction2__/sounds/growing-chamber.ogg",
+        filename = "__Compaction2__/sounds/green-house.ogg",
         volume = 0.75
       },
       idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
@@ -103,21 +114,21 @@ data:extend({
 data:extend {
   {
     type = "recipe-category",
-    name = "growing-crafting"
+    name = "green-house"
   },
   {
     type = "item",
-    name = "growing-chamber",
-    icon = "__Compaction2__/graphics/icons/growing-chamber.png",
+    name = "green-house",
+    icon = "__Compaction2__/graphics/icons/green-house.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = "production-machine",
     order = "g",
-    place_result = "growing-chamber",
+    place_result = "green-house",
     stack_size = 50
   },
   {
     type = "recipe",
-    name = "growing-chamber",
+    name = "green-house",
     category = "crafting",
     energy_required = 2.5,
     crafting_speed = 0.6,
@@ -129,12 +140,12 @@ data:extend {
       { type = "item", name = "iron-gear-wheel", amount = 6 },
       { type = "item", name = "electronic-circuit", amount = 3 },
     },
-    results = { { type = "item", name = "growing-chamber", amount = 1 } }
+    results = { { type = "item", name = "green-house", amount = 1 } }
   },
   {
     type = "recipe",
     name = "greenhouse",
-    category = "growing-crafting",
+    category = "green-house",
     subgroup = "item-growing",
     enabled = false,
     energy_required = 5.5,
@@ -147,13 +158,13 @@ data:extend {
     },
     results = {
       { type = "item", name = "wood",   amount = 25 },
-      { type = "item", name = "tree-seeds", amount_min = 3, amount_max = 5, probability = 0.3 },
+      { type = "item", name = "tree-seeds", amount_min = 3, amount_max = 5, probability = 0.5 },
     },
   },
   {
     type = "recipe",
     name = "crystal",
-    category = "growing-crafting",
+    category = "green-house",
     energy_required = 5.0,
     crafting_speed = 2.8,
     main_product = "quartz",
