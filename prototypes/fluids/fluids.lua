@@ -1,0 +1,58 @@
+data:extend{
+    {
+        type = "fluid",
+        name = "aquaelixir",
+        default_temperature = 50,
+        max_temperature = 500,
+        heat_capacity = "500J",
+        base_color = {r=52, g=152, b=219},
+        flow_color = {r=52, g=152, b=219},
+        icon = "__Compaction2__/graphics/icons/aquaelixir.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "fluid-recipes",
+        order = "z",
+        stack_size = 500
+    },
+    {
+        type = "fluid",
+        name = "dirty-water",
+        default_temperature = 100,
+        max_temperature = 1000,
+        heat_capacity = "500J",
+        base_color = {r=61, g=49, b=15},
+        flow_color = {r=61, g=49, b=15},
+        icon = "__Compaction2__/graphics/icons/dirty-water.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "fluid",
+        order = "z",
+        stack_size = 1500
+    },
+    {
+        type = "fluid",
+        name = "diploid-chloride",
+        default_temperature = -100,
+        max_temperature = 500,
+        heat_capacity = "500J",
+        base_color = {r=99, g=29, b=5},
+        flow_color = {r=99, g=29, b=5},
+        icon = "__Compaction2__/graphics/icons/diploid-chloride.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "fluid",
+        order = "z",
+        stack_size = 5000
+    },
+    {
+        type = "fluid",
+        name = "sulfuric-diploid-chloride",
+        default_temperature =600,
+        max_temperature = 1500,
+        heat_capacity = "500J",
+        base_color = {r=99, g=29, b=5},
+        flow_color = {r=99, g=29, b=5},
+        icon = "__Compaction2__/graphics/icons/sulfuric-diploid-chloride.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "fluid",
+        order = "z",
+        stack_size = 1500
+    },
+}

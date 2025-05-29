@@ -1,0 +1,15 @@
+{
+  "name": "Compaction2",
+  "version": "6.3.0",
+  "title": "Compaction2: New Age",
+  "author": "SuperHeroPuppy",
+  "factorio_version": "2.0.7",
+  "dependencies": [
+    "base >= 2.0.37",
+    "? space-age >= 2.0.37",
+    "? elevated-rails >= 2.0.37",
+    "? quality >= 2.0.37",
+    "? nixie-tubes >= 2.0.2",
+    "! red technology >= 0.5.4"
+]
+}

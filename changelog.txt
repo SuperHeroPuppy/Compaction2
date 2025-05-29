@@ -1,0 +1,128 @@
+---------------------------------------------------------------------------------------------------
+Version: 6.2.0
+  Minor Features:
+    - Complete Overhaul Because of Space Age, This will be changed in the next update.
+---------------------------------------------------------------------------------------------------
+Version: 6.1.0
+  Minor Features:
+    - Bugfixes Release Compaction2: New Age / 6.1.0
+  Changes:
+    - Compaction2 Some Textures Updated
+  Bugfixes:
+    - Fixed: Changelog "Version: 6.0.0" Missing Technology And Recipes
+---------------------------------------------------------------------------------------------------
+Version: 6.0.0
+  Minor Features:
+    - Release Compaction2: New Age / 6.0.0
+  Changes:
+    - Compaction2 Some Textures Updated
+    - Vanilla Recipes Changed "rocket-part", "inserter", "long-handed-inserter", "fast-inserter", "steel-plate", "light-armor", "heavy-armor", "modular-armor"
+    - Vanilla Furnaces Changed
+    - High Density Fuel Unit, Rocket Engine Removed
+  Features:
+    - New Technology: Silicon Processing, Carbon Processing
+    - New Recipes: Carbon, Carbon Fiber, Quartz, Silicon, Graphene
+    - New items: Carbon, Carbon Fiber, Quartz, Silicon, Graphene
+---------------------------------------------------------------------------------------------------
+Version: 5.4.4
+  Minor Features:
+    - Staple Release 5.4.4
+  Bugfixes:
+    - Fixed: image bugs and added support for other mods
+
+---------------------------------------------------------------------------------------------------
+Version: 4.4.4
+  Major Features:
+    - Staple Release 4.4.4
+  Bugfixes:
+    - Fixed: compact-uranium.PNG
+
+---------------------------------------------------------------------------------------------------
+Version: 4.3.4
+  Major Features:
+    - Staple Release 4.3.4
+    - Too Many Changes. Here's a List Of Some of Them: Code Reorganization, Texture Changes, Adding a "useless" feature that does nothing but also does something.
+
+---------------------------------------------------------------------------------------------------
+Version: 4.3.3
+  Major Features:
+    - Staple Release 4.3.3
+  Bugfixes:
+    - Recipes Fixed: Empty Science Pack
+
+---------------------------------------------------------------------------------------------------
+Version: 2.3.3
+  Major Features:
+    - Staple Release 2.3.3
+  Features:
+    - New Recipes: Empty Science Pack
+    - New items: Empty Science Pack
+  Changes:
+    - Vanilla Recipes Changed
+
+---------------------------------------------------------------------------------------------------
+Version: 1.3.3
+  Major Features:
+    - Stable Update 1.3.3
+    - Items And Recipes Added
+    - Shredder Added
+    - Much Much More
+  Bugfixes:
+    - Technology Invalid Key Names
+    - Items Invalid Key Names
+  Changes:
+    - Shredder Recipes Added: Scraps
+    - Modular Assembler Recipes Moved: Scrap
+    - Vanilla Recipes Changed
+
+---------------------------------------------------------------------------------------------------
+Version: 1.2.3
+  Major Features:
+    - Stable Update 1.2.3
+    - Items And Recipes Added: Rocket-Machine-Part, High-Density-Unit, Rocket-Engine, High-Density-Fuel-Unit, High-Density-Control-Unit, Contained-Uranium
+    - Much Much More
+  Bugfixes:
+    - Technology Invalid Key Names
+  Changes:
+    - Modular Assembler Recipes Added: Scrap, Wooden Nugget, Rocket Machine Part, High Density Unit, Rocket-Engine, High-Density-Fuel-Unit, High-Density-Control-Unit, Contained-Uranium
+    - Tin Ore Disabled
+    - Tin Cable Disabled
+    - Tin Plate Disabled
+    - Vanilla Recipes Changed
+
+---------------------------------------------------------------------------------------------------
+Version: 1.2.2
+  Major Features:
+    - Stable Update 1.2.2
+  Bugfixes:
+    - Electric Mining Drill Added Two Technology
+
+---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+  Major Features:
+    - Stable Update Extension More Coming Soon 1.1.2
+
+---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+  Major Features:
+    - Staple Release 0.1.2
+  Features:
+    - New Fluid: AquaElixir
+    - New items: Sand, Wooden, Nugget, Crushed Stone, Gravel, Glass
+  Changes:
+    - Modular Assembler Recipes Added
+    - Modular Assembler Texture
+    - Tin Ore Texture
+    - Tin Cable Texture
+    - Tin Plate Texture
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+  Major Features:
+    - Staple Release 0.0.2
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+  Major Features:
+    - Mod Was Created In A Bunch Of Stuff Was Added.
+    - Mod Was Uploaded To Mod Portal.
