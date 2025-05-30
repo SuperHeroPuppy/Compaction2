@@ -23,6 +23,7 @@ require("prototypes/entity/burner-lab");
 require("prototypes/entity/biological-lab");
 require("prototypes/entity/fusion-reactor");
 require("prototypes/entity/triple-beacon");
+require("prototypes/entity/infinity-provider-chest");
 require("prototypes/entity/spaceship-research-lab");
 
 require("prototypes/fluids/fluids");

@@ -35,6 +35,9 @@ local function add_to_crash_site()
 
   local nauvis = game.get_surface("nauvis")
   if nauvis then
+    local infoitems = remote.call("freeplay", "get_ship_items")
+    infoitems["info"] = 1
+    remote.call("freeplay", "set_ship_items", infoitems)
     local tree_setting = nauvis.map_gen_settings.autoplace_controls.trees
     if not tree_setting or tree_setting.size == 0 then
       local items = remote.call("freeplay", "get_ship_items")

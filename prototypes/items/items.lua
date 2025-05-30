@@ -459,20 +459,6 @@ data:extend {
     },
     {
         type = "item",
-        name = "biter-eggs",
-        icon = "__Compaction2__/graphics/icons/organs/eggs-1.png",
-        pictures =
-        {
-            { size = 64, filename = "__Compaction2__/graphics/icons/organs/eggs-1.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/organs/eggs-2.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/organs/eggs-3.png", scale = 0.25, mipmap_count = 4 },
-        },
-        icon_size = 64, icon_mipmaps = 4,
-        subgroup = "organs",
-        stack_size = 60
-    },
-    {
-        type = "item",
         name = "tree-seeds",
         icon = "__Compaction2__/graphics/icons/seeds/seeds-1.png",
         pictures =
@@ -735,6 +721,13 @@ data:extend {
         stack_size = 10,
         durability = 1,
     },
+    {
+        type = "item",
+        name = "info",
+        icon_size = 64, icon_mipmaps = 4,
+        icon = "__base__/graphics/icons/info.png",
+        stack_size = 100,
+    },
 }
 
 if (mods["space-age"]) then
@@ -761,6 +754,20 @@ else
             subgroup = "space-material",
             order = "d[rocket-parts]-e[satellite]",
             stack_size = 1,
+        },
+        {
+            type = "item",
+            name = "biter-egg",
+            icon = "__Compaction2__/graphics/icons/biter-egg/biter-egg.png",
+            pictures =
+            {
+                { size = 64, filename = "__Compaction2__/graphics/icons/biter-egg/biter-egg-1.png", scale = 0.25, mipmap_count = 4 },
+                { size = 64, filename = "__Compaction2__/graphics/icons/biter-egg/biter-egg-2.png", scale = 0.25, mipmap_count = 4 },
+                { size = 64, filename = "__Compaction2__/graphics/icons/biter-egg/biter-egg-3.png", scale = 0.25, mipmap_count = 4 },
+            },
+            icon_size = 64, icon_mipmaps = 4,
+            subgroup = "organs",
+            stack_size = 60
         },
     }
 end

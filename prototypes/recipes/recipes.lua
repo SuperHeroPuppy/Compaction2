@@ -852,11 +852,11 @@ data:extend {
         type = "recipe",
         name = "processing-fusion-reactor",
         category = "complex-crafting",
-        enabled = true,
+        enabled = false,
         energy_required = 1.0,
         crafting_speed = 0.5,
         ingredients = {
-            { type = "item", name = "iron-plate", amount = 100 }
+            { type = "item", name = "natter", amount = 100 }
         },
         results = {
             { type = "item", name = "processing-fusion-reactor", amount = 1 }

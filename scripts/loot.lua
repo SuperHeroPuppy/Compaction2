@@ -27,8 +27,8 @@ local function AddLootToVanillaEnemies()
 	AddLootToEntity("turret", "big-worm-turret", "biter-organs", 1, 1, 25)
 	AddLootToEntity("turret", "behemoth-worm-turret", "biter-organs", 1, 10, 25)
 
-	AddLootToEntity("unit-spawner", "biter-spawner", "biter-eggs", 1, 5, 20)
-	AddLootToEntity("unit-spawner", "spitter-spawner", "biter-eggs", 1, 5, 20)
+	AddLootToEntity("unit-spawner", "biter-spawner", "biter-egg", 1, 5, 20)
+	AddLootToEntity("unit-spawner", "spitter-spawner", "biter-egg", 1, 5, 20)
 end
 
 AddLootToVanillaEnemies()
