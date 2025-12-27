@@ -18,5 +18,5 @@ If you have any questions or need further assistance, have found a problem, feel
 The locale files support the following languages.
 
 - English (`en`) - [SuperHeroPuppy](https://github.com/SuperHeroPuppy)
-OUTDATED - Afrikaans (`af`) - [LianJordaan](https://github.com/LianJordaan)
-OUTDATED - Hungarian (`hu`) - [EsziL](https://github.com/EsziL)
+- OUTDATED Afrikaans (`af`) - [LianJordaan](https://github.com/LianJordaan)
+- OUTDATED Hungarian (`hu`) - [EsziL](https://github.com/EsziL)
