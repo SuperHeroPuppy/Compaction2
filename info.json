@@ -1,6 +1,6 @@
 {
   "name": "Compaction2",
-  "version": "6.2.0",
+  "version": "6.2.1",
   "title": "Compaction2: New Age (Development)",
   "author": "SuperHeroPuppy",
   "factorio_version": "2.0",
@@ -11,6 +11,7 @@
     "? quality >= 2.0.37",
     "? Noctyra >= 1.0.0",
     "? CharacterUtilities >= 1.0.0",
-    "! red technology >= 0.5.4"
+    "! red technology >= 0.5.4",
+    "! any-planet-starter >= 1.1.27"
 ]
 }

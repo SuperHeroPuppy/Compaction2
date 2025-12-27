@@ -33,7 +33,7 @@ data:extend(
       hidden = true,
       max_health = 350,
       minable = { mining_time = 1 },
-      corpse = "small-remnants", 
+      corpse = "small-remnants",
       resistances =
       {
         {
@@ -157,3 +157,20 @@ for _, flag in ipairs(data.raw.container['crash-site-spaceship'].flags) do
   end
 end
 data.raw.container['crash-site-spaceship'].flags = flags
+
+
+if (mods["space-age"]) then
+  data.raw.container['crash-site-spaceship'].surface_conditions =
+  {
+    {
+      property = "gravity",
+      min = 10,
+      max = 10
+    },
+    {
+      property = "pressure",
+      min = 1000,
+      max = 1000
+    }
+  }
+end

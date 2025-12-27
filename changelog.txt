@@ -3,7 +3,12 @@ Version: 6.2.1
   Major Features:
     - Staple Release 6.2.1
   Features:
-    - Complete total current features in the mod.
+    - New item: linked-transfer-port
+    - New entity: linked-transfer-port
+  Bugfixes:
+    - Fixed: crash-site-spaceship relativity and remote view teleportation
+  Info
+    - Also did a bunch of stuff over previous times but forgot to write it down
 ---------------------------------------------------------------------------------------------------
 Version: 6.2.0
   Major Features:

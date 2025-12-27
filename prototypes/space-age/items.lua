@@ -139,9 +139,10 @@ else
             type = "item",
             name = "nutrients",
             icon = "__Compaction2__/graphics/icons/resource/nutrients.png",
-            subgroup = "agriculture-processes",
+            subgroup = "nauvis-agriculture",
             order = "c[nutrients]-b[nutrients]",
             fuel_value = "2MJ",
+            fuel_category = "chemical",
             stack_size = 100,
             weight = 0.5 * kg
         },

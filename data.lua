@@ -1,4 +1,5 @@
 require("scripts/loot");
+--require("scripts/cutscene"); -- Disabled cutscene for now due to it completely not functioning.
 require("scripts/menu");
 
 require("prototypes/items/items");
@@ -30,6 +31,7 @@ require("prototypes/entity/triple-beacon");
 require("prototypes/entity/infinity-provider-chest");
 require("prototypes/entity/spaceship-research-lab");
 require("prototypes/entity/spaceship-reactor");
+require("prototypes/entity/linked-transfer-port");
 require("prototypes/entity/tiles");
 
 require("prototypes/entity/logos");
@@ -71,33 +73,3 @@ offshore_pump.energy_source = {
   usage_priority = "secondary-input"
 }
 offshore_pump.energy_usage = "50kW"
-
-
-
--- Deep copy the vanilla transport belt
-local white_belt = table.deepcopy(data.raw["transport-belt"]["transport-belt"])
-
--- Give it a new internal name
-white_belt.name = "white-transport-belt"
-
--- Make it slower (default is 0.03125, reduce it)
-white_belt.speed = 0.015625
-
--- Recolor all belt sprites to white tint
-local function apply_white_tint(belt_sprites)
-  if not belt_sprites then return end
-  for _, sprite in pairs(belt_sprites) do
-    if sprite.hr_version then
-      sprite.hr_version.tint = {r=1, g=1, b=1, a=1}
-    end
-    sprite.tint = {r=1, g=1, b=1, a=1}
-  end
-end
-
-apply_white_tint(white_belt.belt_animation_set.animation_set.north)
-apply_white_tint(white_belt.belt_animation_set.animation_set.east)
-apply_white_tint(white_belt.belt_animation_set.animation_set.south)
-apply_white_tint(white_belt.belt_animation_set.animation_set.west)
-
--- Register it
-data:extend({white_belt})
