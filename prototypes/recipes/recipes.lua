@@ -384,6 +384,22 @@ data:extend {
     },
     {
         type = "recipe",
+        name = "dissolved-nutrients",
+        main_product = "dissolved-nutrients",
+        category = "biologically-researching",
+        energy_required = 4.4,
+        enabled = false,
+        ingredients = {
+            { type = "item",  name = "nutrients",      amount = 5 },
+            { type = "fluid", name = "water",       amount = 150 }
+        },
+        results = {
+            { type = "fluid", name = "dissolved-nutrients",  amount = 150 },
+        },
+        allow_productivity = true
+    },
+    {
+        type = "recipe",
         name = "filtered-water",
         main_product = "water",
         category = "chemistry",
@@ -417,6 +433,24 @@ data:extend {
         results = {
             { type = "fluid", name = "dirty-water",  amount = 200 },
             { type = "item",  name = "clean-filter", amount = 1 }
+        },
+        allow_productivity = false
+    },
+    {
+        type = "recipe",
+        name = "sack-o-dirt",
+        main_product = "sack-o-dirt",
+        category = "chemistry",
+        subgroup = "fluid-recipes",
+        order = "z",
+        energy_required = 4.4,
+        enabled = false,
+        ingredients = {
+            { type = "fluid", name = "dirty-water",        amount = 200 }
+        },
+        results = {
+            { type = "fluid", name = "water",  amount = 10 },
+            { type = "item",  name = "sack-o-dirt", amount = 1 }
         },
         allow_productivity = false
     },
@@ -579,6 +613,37 @@ data:extend {
             { type = "item", name = "wooden-electronic-board", amount = 1 }
         },
         allow_productivity = true
+    },
+    {
+        type = "recipe",
+        name = "alternate-landfill",
+        category = "crafting",
+        enabled = false,
+        energy_required = 1.0,
+        crafting_speed = 0.5,
+        ingredients = {
+            { type = "item", name = "sack-o-dirt", amount = 5 },
+        },
+        results = {
+            { type = "item", name = "landfill", amount = 15 }
+        },
+        allow_productivity = true
+    },
+    {
+        type = "recipe",
+        name = "wooden-tech-card",
+        category = "crafting",
+        enabled = false,
+        energy_required = 1.0,
+        crafting_speed = 0.5,
+        ingredients = {
+            { type = "item", name = "wooden-electronic-board", amount = 1 },
+            { type = "item", name = "copper-cable", amount = 2 }
+        },
+        results = {
+            { type = "item", name = "wooden-tech-card", amount = 1 }
+        },
+        allow_productivity = false
     },
     {
         type = "recipe",
@@ -869,6 +934,7 @@ data:extend {
         icon = "__Compaction2__/graphics/research/crystal-2.png",
         icon_size = 1024,
         category = "centrifuging",
+        auto_recycle = false,
         enabled = false,
         energy_required = 1.0,
         crafting_speed = 0.5,
@@ -892,6 +958,7 @@ data:extend {
         icon = "__Compaction2__/graphics/research/crystal-1.png",
         icon_size = 1024,
         category = "centrifuging",
+        auto_recycle = false,
         enabled = false,
         energy_required = 1.0,
         crafting_speed = 0.5,
@@ -915,6 +982,7 @@ data:extend {
         icon = "__Compaction2__/graphics/research/crystal-3.png",
         icon_size = 1024,
         category = "centrifuging",
+        auto_recycle = false,
         enabled = false,
         energy_required = 1.0,
         crafting_speed = 0.5,
@@ -937,6 +1005,7 @@ data:extend {
         name = "nugget-processing",
         category = "shredder-crafting",
         main_product = "nugget-metal",
+        auto_recycle = false,
         enabled = false,
         energy_required = 1.0,
         crafting_speed = 0.5,
@@ -1071,53 +1140,6 @@ data:extend {
     },
     {
         type = "recipe",
-        name = "iron-tip-magazine",
-        category = "advanced-crafting",
-        enabled = true,
-        energy_required = 1.0,
-        crafting_speed = 0.5,
-        ingredients = {
-            { type = "item", name = "iron-plate", amount = 10 },
-        },
-        results = {
-            { type = "item", name = "iron-tip-magazine", amount = 3 }
-        },
-        allow_productivity = true
-    },
-    {
-        type = "recipe",
-        name = "iron-natter-recreation",
-        category = "complex-fusion",
-        enabled = true,
-        energy_required = 100.0,
-        crafting_speed = 5,
-        ingredients = {
-            { type = "item", name = "natter",     amount = 100 },
-            { type = "item", name = "iron-plate", amount = 100 },
-        },
-        results = {
-            { type = "item", name = "iron-plate", amount = 101 }
-        },
-        allow_productivity = false
-    },
-    {
-        type = "recipe",
-        name = "copper-natter-recreation",
-        category = "complex-fusion",
-        enabled = true,
-        energy_required = 100.0,
-        crafting_speed = 5,
-        ingredients = {
-            { type = "item", name = "natter",       amount = 100 },
-            { type = "item", name = "copper-plate", amount = 100 },
-        },
-        results = {
-            { type = "item", name = "copper-plate", amount = 101 }
-        },
-        allow_productivity = false
-    },
-    {
-        type = "recipe",
         name = "rocket-control-unit",
         category = "advanced-crafting",
         energy_required = 5.2,
@@ -1132,30 +1154,26 @@ data:extend {
             { type = "item", name = "rocket-control-unit", amount = 1 }
         },
         allow_productivity = true
-    }
-}
-
-
-if (mods["space-age"]) then
-  -- removes recipes if space age is enabled
-else
-    data:extend {
-        {
-            type = "recipe",
-            name = "space-supplies-science",
-            category = "advanced-crafting",
-            enabled = false,
-            energy_required = 1.0,
-            crafting_speed = 0.5,
-            ingredients = {
-                { type = "item",  name = "carbon",     amount = 1 },
-                { type = "item",  name = "iron-plate", amount = 10 },
-                { type = "fluid", name = "water",      amount = 20 }
-            },
-            results = {
-                { type = "item", name = "space-supplies-science", amount = 3 }
-            },
-            allow_productivity = true
+    },
+    {
+        type = "recipe",
+        name = "dissolving-fish",
+        main_product = "nutrients",
+        icon = "__Compaction2__/graphics/recipes/nutrients-from-fish.png",
+        icon_size = 64,
+        category = "biologically-researching",
+        subgroup = "fluid-recipes",
+        order = "z",
+        energy_required = 4.4,
+        enabled = false,
+        ingredients = {
+            { type = "item",  name = "raw-fish", amount = 5 },
+            { type = "fluid", name = "water",  amount = 100 },
         },
-    }
-end
+        results = {
+            { type = "fluid", name = "dirty-water",  amount = 100 },
+            { type = "item", name = "nutrients",amount = 15 }
+        },
+        allow_productivity = false
+    },
+}

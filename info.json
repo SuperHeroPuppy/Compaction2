@@ -9,7 +9,8 @@
     "? space-age >= 2.0.37",
     "? elevated-rails >= 2.0.37",
     "? quality >= 2.0.37",
-    "? nixie-tubes >= 2.0.2",
+    "? Noctyra >= 1.0.0",
+    "? CharacterUtilities >= 1.0.0",
     "! red technology >= 0.5.4"
 ]
 }

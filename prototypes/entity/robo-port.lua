@@ -41,7 +41,7 @@ data:extend{
     {
         type = "item",
         name = "mini-roboport",
-        icon = "__Compaction2__/graphics/entity/mini-roboport.png",
+        icon = "__Compaction2__/graphics/entity/icons/mini-roboport.png",
         icon_size = 64, icon_mipmaps = 1,
         subgroup = "logistic-network",
         order = "3",

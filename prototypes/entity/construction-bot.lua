@@ -37,7 +37,7 @@ data:extend{
     {
         type = "item",
         name = "mini-robot",
-        icon = "__Compaction2__/graphics/entity/mini-robot.png",
+        icon = "__Compaction2__/graphics/entity/icons/mini-robot.png",
         icon_size = 64, icon_mipmaps = 1,
         subgroup = "logistic-network",
         order = "1",

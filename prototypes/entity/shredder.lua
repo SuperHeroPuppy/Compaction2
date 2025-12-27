@@ -1,7 +1,7 @@
 local shredder = {
     type = "assembling-machine",
     name = "shredder",
-    icon = "__Compaction2__/graphics/icons/shredder.png",
+    icon = "__Compaction2__/graphics/entity/icons/shredder.png",
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 0.3, result = "shredder"},
@@ -91,7 +91,7 @@ data:extend{
     {
         type = "item",
         name = "shredder",
-        icon = "__Compaction2__/graphics/icons/shredder.png",
+        icon = "__Compaction2__/graphics/entity/icons/shredder.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "production-machine",
         order = "e",

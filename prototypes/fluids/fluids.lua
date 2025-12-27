@@ -7,11 +7,12 @@ data:extend{
         heat_capacity = "500J",
         base_color = {r=52, g=152, b=219},
         flow_color = {r=52, g=152, b=219},
-        icon = "__Compaction2__/graphics/icons/aquaelixir.png",
+        icon = "__Compaction2__/graphics/fluid/aquaelixir.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "fluid-recipes",
         order = "z",
-        stack_size = 500
+        stack_size = 500,
+        auto_barrel = true
     },
     {
         type = "fluid",
@@ -21,11 +22,27 @@ data:extend{
         heat_capacity = "500J",
         base_color = {r=61, g=49, b=15},
         flow_color = {r=61, g=49, b=15},
-        icon = "__Compaction2__/graphics/icons/dirty-water.png",
+        icon = "__Compaction2__/graphics/fluid/dirty-water.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "fluid",
         order = "z",
-        stack_size = 1500
+        stack_size = 1500,
+        auto_barrel = true
+    },
+    {
+        type = "fluid",
+        name = "dissolved-nutrients",
+        default_temperature = 100,
+        max_temperature = 1000,
+        heat_capacity = "500J",
+        base_color = {r=190, g=210, b=227},
+        flow_color = {r=190, g=210, b=227},
+        icon = "__Compaction2__/graphics/fluid/dissolved-nutrients.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "fluid",
+        order = "z",
+        stack_size = 1500,
+        auto_barrel = true
     },
     {
         type = "fluid",
@@ -35,11 +52,12 @@ data:extend{
         heat_capacity = "500J",
         base_color = {r=99, g=29, b=5},
         flow_color = {r=99, g=29, b=5},
-        icon = "__Compaction2__/graphics/icons/diploid-chloride.png",
+        icon = "__Compaction2__/graphics/fluid/diploid-chloride.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "fluid",
         order = "z",
-        stack_size = 5000
+        stack_size = 5000,
+        auto_barrel = true
     },
     {
         type = "fluid",
@@ -49,10 +67,11 @@ data:extend{
         heat_capacity = "500J",
         base_color = {r=99, g=29, b=5},
         flow_color = {r=99, g=29, b=5},
-        icon = "__Compaction2__/graphics/icons/sulfuric-diploid-chloride.png",
+        icon = "__Compaction2__/graphics/fluid/sulfuric-diploid-chloride.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "fluid",
         order = "z",
-        stack_size = 1500
+        stack_size = 1500,
+        auto_barrel = true
     },
 }

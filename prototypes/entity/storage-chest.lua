@@ -19,7 +19,7 @@ data:extend{
     {
         type = "item",
         name = "makeShift-storage-chest",
-        icon = "__Compaction2__/graphics/entity/chest.png",
+        icon = "__Compaction2__/graphics/entity/icons/chest.png",
         icon_size = 64, icon_mipmaps = 1,
         subgroup = "logistic-network",
         order = "5",

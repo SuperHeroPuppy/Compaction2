@@ -2,7 +2,7 @@ data:extend({
   {
     type = "assembling-machine",   --type = "furnace",
     name = "processing-fusion-reactor",
-    icon = "__Compaction2__/graphics/icons/fusion-reactor.png",
+    icon = "__Compaction2__/graphics/entity/icons/fusion-reactor.png",
     icon_size = 64,
     icon_mipmaps = 4,
     flags = { "placeable-neutral", "placeable-player", "player-creation" },
@@ -20,7 +20,6 @@ data:extend({
     fluid_boxes = {
       {
         production_type = "input",
-        pipe_covers = pipecoverspictures(),
         base_area = 10,
         height = 1,
         base_level = -1,
@@ -29,7 +28,6 @@ data:extend({
       },
       {
         production_type = "output",
-        pipe_covers = pipecoverspictures(),
         base_area = 1000,
         height = 1,
         base_level = 1,
@@ -207,8 +205,9 @@ data:extend {
   {
     type = "item",
     name = "processing-fusion-reactor",
-    icon = "__Compaction2__/graphics/icons/fusion-reactor.png",
+    icon = "__Compaction2__/graphics/entity/icons/fusion-reactor.png",
     icon_size = 64, icon_mipmaps = 4,
+    hidden = true,
     subgroup = "production-machine",
     order = "e",
     place_result = "processing-fusion-reactor",

@@ -3,13 +3,13 @@ data.raw.lab.lab.fast_replaceable_group = data.raw.lab.lab.fast_replaceable_grou
 burner_lab.name = "burner-lab"
 burner_lab.minable.result = "burner-lab"
 burner_lab.next_upgrade = "lab"
-burner_lab.icon = "__Compaction2__/graphics/icons/burner-lab.png"
+burner_lab.icon = "__Compaction2__/graphics/entity/icons/burner-lab.png"
 burner_lab.icon_size = 64
 burner_lab.icon_mipmaps = 1
 burner_lab.inputs =
     {
+      "wooden-tech-card",
       "automation-science-pack",
-      "logistic-science-pack"
     }
 burner_lab.energy_source =
 {

@@ -26,10 +26,10 @@ data:extend({
         order = "s[sulfur]",
         minable =
         {
-            hardness = 3,
+            hardness = 5,
             mining_particle = "stone-particle",
             mining_time = 0.75,
-            fluid_amount = 1,
+            fluid_amount = 5,
             required_fluid = "water",
              result = "sulfur"
         },

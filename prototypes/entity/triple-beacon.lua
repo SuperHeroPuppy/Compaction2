@@ -13,10 +13,9 @@ data:extend {
     {
         type = "item",
         name = "triple-beacon",
-        icon = "__Compaction2__/graphics/icons/beacon.png",
+        icon = "__Compaction2__/graphics/entity/icons/beacon.png",
         icon_size = 64, icon_mipmaps = 1,
-        subgroup = "logistic-network",
-        order = "1",
+        hidden = true,
         stack_size = 25,
         place_result = "triple-beacon"
     }

@@ -5,9 +5,10 @@ data:extend({
   {
     type = "lab",
     name = "spaceship-research-lab",
-    icon = "__Compaction2__/graphics/icons/spaceship-research-lab.png",
+    icon = "__Compaction2__/graphics/entity/icons/spaceship-research-lab.png",
     flags = { "placeable-player", "player-creation", "not-rotatable" },
     hidden = true,
+    allow_copy_paste = false,
     map_color = { r = 0, g = 0.365, b = 0.58, a = 1 },
     max_health = 150,
     resistances = {
@@ -152,14 +153,3 @@ data:extend({
     },
   },
 })
-
-data:extend {
-  {
-    type = "item",
-    name = "spaceship-research-lab",
-    icon = "__Compaction2__/graphics/icons/spaceship-research-lab.png",
-    icon_size = 64, icon_mipmaps = 1,
-    stack_size = 1,
-    place_result = "spaceship-research-lab"
-  }
-}

@@ -17,7 +17,7 @@
 local machine = {
     type = "assembling-machine",
     name = "modular-assembler",
-    icon = "__Compaction2__/graphics/icons/modular-assembler.png",
+    icon = "__Compaction2__/graphics/entity/icons/modular-assembler.png",
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 0.3, result = "modular-assembler"},
@@ -150,7 +150,7 @@ data:extend{
     {
         type = "item",
         name = "modular-assembler",
-        icon = "__Compaction2__/graphics/icons/modular-assembler.png",
+        icon = "__Compaction2__/graphics/entity/icons/modular-assembler.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "production-machine",
         order = "d",

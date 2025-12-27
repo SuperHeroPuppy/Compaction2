@@ -1,5 +1,11 @@
 local tier = 1
 
+data.raw.technology["sulfur-processing"] = nil
+data.raw.technology["military"] = nil
+data.raw.technology["uranium-mining"] = nil
+data.raw.technology["electronics"] = nil
+data.raw.technology["automation"] = nil
+
 data:extend({
     {
         type = "technology",
@@ -25,7 +31,7 @@ data:extend({
     {
         type = "technology",
         name = "flight-science-pack-tech",
-        icon = "__Compaction2__/graphics/icons/flight-science-pack.png",
+        icon = "__Compaction2__/graphics/icons/science/flight-science-pack.png",
         localised_description = "Unlock the Special science to learn how to Fly!",
         icon_size = 64,
         effects = {
@@ -49,7 +55,7 @@ data:extend({
     {
         type = "technology",
         name = "flight-controller-tech",
-        icon = "__Compaction2__/graphics/icons/flight-controller.png",
+        icon = "__Compaction2__/graphics/icons/intermediate/flight-controller.png",
         localised_description = "Unlock the Flight Controller to control flying Objects.",
         icon_size = 64,
         effects = {
@@ -74,7 +80,7 @@ data:extend({
     {
         type = "technology",
         name = "mini-robot-tech",
-        icon = "__Compaction2__/graphics/entity/mini-robot.png",
+        icon = "__Compaction2__/graphics/entity/icons/mini-robot.png",
         localised_description = "They're Construction Bots but smaller?",
         icon_size = 64,
         effects = {
@@ -96,7 +102,7 @@ data:extend({
     {
         type = "technology",
         name = "mini-logistic-robot-tech",
-        icon = "__Compaction2__/graphics/entity/mini-logistic-robot.png",
+        icon = "__Compaction2__/graphics/entity/icons/mini-logistic-robot.png",
         localised_description = "they're logistic Bots but smaller?",
         icon_size = 64,
         effects = {
@@ -118,7 +124,7 @@ data:extend({
     {
         type = "technology",
         name = "mini-roboport-tech",
-        icon = "__Compaction2__/graphics/entity/mini-roboport.png",
+        icon = "__Compaction2__/graphics/entity/icons/mini-roboport.png",
         localised_description = "they're Roboports but smaller?",
         icon_size = 64,
         effects = {
@@ -146,9 +152,9 @@ data:extend({
     {
         type = "technology",
         name = "modular-assembler-tech",
-        icon = "__Compaction2__/graphics/research/automation2.png",
+        icon = "__Compaction2__/graphics/research/modular-assembler-tech.png",
         localised_description = "Unlock the Special Assembler used for Crafting Special stuff from the mod.",
-        icon_size = 256,
+        icon_size = 640,
         effects = {
             { type = "unlock-recipe", recipe = "modular-assembler" },
         },
@@ -223,7 +229,14 @@ data:extend({
         localised_description =
         "Unlock this technology that allows you to unlock other technology that allows you to Reforging Scrap",
         icon_size = 1024,
-        effects = {},
+        effects = {
+            { type = "unlock-recipe", recipe = "pistol-scrap" },
+            { type = "unlock-recipe", recipe = "scrap-recycling-1" },
+            { type = "unlock-recipe", recipe = "scrap-recycling-2" },
+            { type = "unlock-recipe", recipe = "scrap-recycling-3" },
+            { type = "unlock-recipe", recipe = "scrap-recycling-4" },
+            { type = "unlock-recipe", recipe = "scrap-recycling-5" }
+        },
         prerequisites = {
             "logistic-science-pack",
             "steel-processing",
@@ -245,7 +258,7 @@ data:extend({
     {
         type = "technology",
         name = "rocket-casing-tech",
-        icon = "__Compaction2__/graphics/icons/rocket-casing.png",
+        icon = "__Compaction2__/graphics/icons/intermediate/rocket-casing.png",
         localised_description = "It's a rocket casing what do you do think it was?",
         icon_size = 64,
         effects = {
@@ -274,7 +287,7 @@ data:extend({
     {
         type = "technology",
         name = "shredder-tech",
-        icon = "__Compaction2__/graphics/research/automation3.png",
+        icon = "__Compaction2__/graphics/research/shredder-tech.png",
         localised_description = "Unlocking a large thing that likes to shred things!",
         icon_size = 256,
         effects = {
@@ -354,6 +367,8 @@ data:extend({
             { type = "unlock-recipe", recipe = "clean-filter" },
             { type = "unlock-recipe", recipe = "dirty-water" },
             { type = "unlock-recipe", recipe = "filtered-water" },
+            { type = "unlock-recipe", recipe = "sack-o-dirt" },
+             { type = "unlock-recipe", recipe = "alternate-landfill" },
         },
         prerequisites = {
             "chemical-processing",
@@ -494,6 +509,8 @@ data:extend({
         icon_size = 256,
         effects = {
             { type = "unlock-recipe", recipe = "biological-lab" },
+            { type = "unlock-recipe", recipe = "dissolved-nutrients" },
+            { type = "unlock-recipe", recipe = "dissolving-fish" },
         },
         prerequisites = {
             "automation",
@@ -583,6 +600,7 @@ data:extend({
         name = "military",
         icon_size = 256,
         icon_mipmaps = 4,
+        prerequisites = { "intermediate-products-tech" },
         icon = "__base__/graphics/technology/military.png",
         effects = {
             { type = "unlock-recipe", recipe = "submachine-gun" },
@@ -593,7 +611,7 @@ data:extend({
             count = 10,
             ingredients =
             {
-                { "automation-science-pack", 1 },
+                { "wooden-tech-card", 1 },
             },
             time = 15,
             order = "e-a-a"
@@ -750,18 +768,15 @@ data:extend({
     },
     {
         type = "technology",
-        name = "intermediate-products",
+        name = "intermediate-products-tech",
         icon = "__Compaction2__/graphics/research/intermediate-products.png",
         localised_description = "Unlock the basic intermediates.",
         icon_size = 256,
         effects = {
-            { type = "unlock-recipe", recipe = "basic-circuit" },
-            { type = "unlock-recipe", recipe = "electronic-parts" },
-            { type = "unlock-recipe", recipe = "wooden-electronic-board" },
-            { type = "unlock-recipe", recipe = "copper-cable" },
-            { type = "unlock-recipe", recipe = "iron-stick" },
             { type = "unlock-recipe", recipe = "iron-gear-wheel" },
+            { type = "unlock-recipe", recipe = "iron-stick" },
             { type = "unlock-recipe", recipe = "metal-bearing" },
+            { type = "unlock-recipe", recipe = "burner-inserter" },
         },
         prerequisites = {},
         research_trigger =
@@ -776,13 +791,16 @@ data:extend({
         name = "electronics",
         icon = "__base__/graphics/technology/electronics.png",
         icon_size = 256,
-        prerequisites = { "intermediate-products" },
+        prerequisites = { "intermediate-products-tech" },
         effects =
         {
-            {
-                type = "unlock-recipe",
-                recipe = "electronic-circuit"
-            }
+            { type = "unlock-recipe", recipe = "wooden-tech-card" },
+            { type = "unlock-recipe", recipe = "electronic-circuit" },
+            { type = "unlock-recipe", recipe = "basic-circuit" },
+            { type = "unlock-recipe", recipe = "electronic-parts" },
+            { type = "unlock-recipe", recipe = "wooden-electronic-board" },
+            { type = "unlock-recipe", recipe = "copper-cable" },
+            { type = "unlock-recipe", recipe = "small-electric-pole" }
         },
         research_trigger =
         {
@@ -790,6 +808,35 @@ data:extend({
             item = "copper-plate",
             count = 10
         }
+    },
+    {
+        type = "technology",
+        name = "automation",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256,
+        effects =
+        {
+            {
+                type = "unlock-recipe",
+                recipe = "assembling-machine-1"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "long-handed-inserter"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "inserter"
+            }
+        },
+        prerequisites = { "electronics", "automation-science-pack" },
+        unit =
+        {
+            count = 10,
+            ingredients = { { "wooden-tech-card", 1 }, {"automation-science-pack", 1 } },
+            time = 10
+        },
+        ignore_tech_cost_multiplier = true
     },
     {
         type = "technology",
@@ -801,53 +848,18 @@ data:extend({
         {
             {
                 type = "unlock-recipe",
+                recipe = "empty-science-pack"
+            },
+            {
+                type = "unlock-recipe",
                 recipe = "automation-science-pack"
             }
         },
-        prerequisites = { "steam-power", "electronics" },
+        prerequisites = { "electronics" },
         research_trigger =
         {
             type = "craft-item",
             item = "burner-lab"
-        }
-    },
-    {
-        type = "technology",
-        name = "steam-power",
-        icon = "__base__/graphics/technology/steam-power.png",
-        icon_size = 256,
-        effects =
-        {
-            {
-                type = "unlock-recipe",
-                recipe = "pipe"
-            },
-            {
-                type = "unlock-recipe",
-                recipe = "pipe-to-ground"
-            },
-            {
-                type = "unlock-recipe",
-                recipe = "offshore-pump"
-            },
-            {
-                type = "unlock-recipe",
-                recipe = "boiler"
-            },
-            {
-                type = "unlock-recipe",
-                recipe = "steam-engine"
-            },
-            {
-                type = "unlock-recipe",
-                recipe = "small-electric-pole"
-            }
-        },
-        research_trigger =
-        {
-            type = "craft-item",
-            item = "iron-plate",
-            count = 50
         }
     },
     {
@@ -879,6 +891,64 @@ data:extend({
     },
     {
         type = "technology",
+        name = "basic-fluid-handling",
+        icon = "__Compaction2__/graphics/research/basic-fluid-handling.png",
+        icon_size = 256,
+        prerequisites = { "intermediate-products-tech" },
+        effects =
+        {
+            {
+                type = "unlock-recipe",
+                recipe = "pipe"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "pipe-to-ground"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "offshore-pump"
+            },
+        },
+        unit =
+        {
+            count = 5,
+            ingredients =
+            {
+                { "wooden-tech-card", 1 },
+            },
+            time = 10
+        },
+    },
+    {
+        type = "technology",
+        name = "steam-power",
+        icon = "__base__/graphics/technology/steam-power.png",
+        icon_size = 256,
+        prerequisites = { "basic-fluid-handling", "intermediate-products-tech" },
+        effects =
+        {
+            {
+                type = "unlock-recipe",
+                recipe = "boiler"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "steam-engine"
+            }
+        },
+        unit =
+        {
+            count = 15,
+            ingredients =
+            {
+                { "wooden-tech-card", 1 },
+            },
+            time = 15
+        },
+    },
+    {
+        type = "technology",
         name = "fluid-mining",
         icon = "__Compaction2__/graphics/research/fluid-mining.png",
         icon_size = 256,
@@ -895,89 +965,9 @@ data:extend({
             count = 10,
             ingredients =
             {
-                { "automation-science-pack",   1 },
+                { "automation-science-pack", 1 },
             },
             time = 10
         },
     },
 })
-
-if (mods["space-age"]) then
-    data:extend({
-        {
-            type = "technology",
-            name = "rocket-control-unit",
-            icon = "__Compaction2__/graphics/research/rocket-control-unit.png",
-            localised_description = "Archived, I'm Back.",
-            icon_size = 256,
-            effects = {
-                { type = "unlock-recipe", recipe = "rocket-control-unit" },
-            },
-            prerequisites = {
-                "flight-science-pack-tech",
-                "processing-unit"
-            },
-            unit =
-            {
-                count = 300,
-                ingredients =
-                {
-                    { "automation-science-pack", 1 },
-                    { "chemical-science-pack",   1 },
-                    { "logistic-science-pack",   1 },
-                },
-                time = 45
-            },
-        },
-    })
-else
-    data:extend({
-        {
-            type = "technology",
-            name = "rocket-control-unit",
-            icon = "__Compaction2__/graphics/research/rocket-control-unit.png",
-            localised_description = "Archived, I'm Back.",
-            icon_size = 256,
-            effects = {
-                { type = "unlock-recipe", recipe = "rocket-control-unit" },
-            },
-            prerequisites = {
-                "utility-science-pack",
-                "flight-science-pack-tech",
-                "processing-unit"
-            },
-            unit =
-            {
-                count = 300,
-                ingredients =
-                {
-                    { "automation-science-pack", 1 },
-                    { "chemical-science-pack",   1 },
-                    { "logistic-science-pack",   1 },
-                    { "utility-science-pack",    1 },
-                },
-                time = 45
-            },
-        },
-        {
-            type = "technology",
-            name = "space-science-pack",
-            icon = "__base__/graphics/technology/space-science-pack.png",
-            icon_size = 256,
-            essential = true,
-            effects =
-            {
-                {
-                    type = "unlock-recipe",
-                    recipe = "space-supplies-science"
-                },
-            },
-            research_trigger =
-            {
-                type = "send-item-to-orbit",
-                item = "satellite"
-            },
-            prerequisites = { "rocket-silo" }
-        },
-    })
-end

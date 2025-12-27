@@ -6,11 +6,9 @@ data.raw.technology["landfill"].prerequisites = {"world-processing-tech", "logis
 data.raw.technology["logistics"].prerequisites = {"automation"}
 data.raw.technology["logistic-science-pack"].prerequisites = {"automation", "logistics"}
 data.raw.technology["gun-turret"].prerequisites = {"military"}
-data.raw.technology["automation"].prerequisites = {"electronics"}
 data.raw.technology["fast-inserter"].prerequisites = {"automation"}
-data.raw.technology["electronics"].prerequisites = {}
 data.raw.technology["steel-axe"].prerequisites = {"world-processing-tech"}
-data.raw.technology["concrete"].prerequisites = {"world-processing-tech", "logistic-science-pack"}
+data.raw.technology["concrete"].prerequisites = {"world-processing-tech", "logistic-science-pack", "automation-2"}
 data.raw.technology["solar-energy"].prerequisites = {"world-processing-tech", "lamp", "battery", "aquaelixir-tech"}
 data.raw.technology["laser"].prerequisites = {"world-processing-tech", "lamp", "battery", "chemical-science-pack"}
 data.raw.technology["explosives"].prerequisites = {"world-processing-tech", "sulfur-processing"}
@@ -50,42 +48,18 @@ else
     }
 end
 
-data.raw.technology["electronics"].effects = data.raw.technology["electronics"].effects or {}
-local new_effects1 = data.raw.technology["logistics"].effects
-local new_effects2 = data.raw.technology["automation"].effects
-local new_effects3 = data.raw.technology["solar-energy"].effects
-local new_effects4 = data.raw.technology["logistic-science-pack"].effects
-local new_effects5 = data.raw.technology["automation-science-pack"].effects
-table.insert(new_effects1, {type = "unlock-recipe", recipe = "transport-belt"})
-table.insert(new_effects2, {type = "unlock-recipe", recipe = "inserter"})
-table.insert(new_effects3, {type = "unlock-recipe", recipe = "photovoltaic"})
-table.insert(new_effects4, {type = "unlock-recipe", recipe = "lab"})
-table.insert(new_effects5, {type = "unlock-recipe", recipe = "empty-science-pack"})
-
-local function add_science_pack_to_difficulty(difficulty, name, count)
-    table.insert(difficulty.unit.ingredients, {name, count})
-end
-
 table.insert(data.raw["assembling-machine"]["assembling-machine-3"].crafting_categories,"complex-crafting")
 
---local function add_science_pack(technology, name, count)
---    if technology.normal or technology.expensive then
---        if technology.normal then
---            add_science_pack_to_difficulty(technology.normal, name, count)
---        end
---        if technology.expensive then
---            add_science_pack_to_difficulty(technology.expensive, name, count)
---        end
---    else
---        add_science_pack_to_difficulty(technology, name, count)
---    end
---end
+local new_effects1 = data.raw.technology["logistics"].effects
+local new_effects2 = data.raw.technology["solar-energy"].effects
+local new_effects3 = data.raw.technology["logistic-science-pack"].effects
+table.insert(new_effects1, {type = "unlock-recipe", recipe = "transport-belt"})
+table.insert(new_effects2, {type = "unlock-recipe", recipe = "photovoltaic"})
+table.insert(new_effects3, {type = "unlock-recipe", recipe = "lab"})
 
-
-local function add_science_pack(technology, name, count)
-    add_science_pack_to_difficulty(technology, name, count)
+local function add_science_pack(difficulty, name, count)
+    table.insert(difficulty.unit.ingredients, {name, count})
 end
-
 
 add_science_pack(data.raw["technology"]["robotics"], "flight-science-pack", 1)
 add_science_pack(data.raw["technology"]["rocket-silo"], "flight-science-pack", 1)
@@ -105,7 +79,6 @@ add_science_pack(data.raw["technology"]["worker-robots-speed-4"], "flight-scienc
 add_science_pack(data.raw["technology"]["worker-robots-speed-5"], "flight-science-pack", 1)
 add_science_pack(data.raw["technology"]["worker-robots-speed-6"], "flight-science-pack", 1)
 
-
 data.raw.recipe["transport-belt"].enabled = false
 data.raw.recipe["inserter"].enabled = false
 data.raw.recipe["light-armor"].enabled = false
@@ -114,12 +87,52 @@ data.raw.recipe["electronic-circuit"].enabled = false
 data.raw.recipe["electric-mining-drill"].enabled = false
 data.raw.recipe["firearm-magazine"].enabled = false
 data.raw.recipe["iron-gear-wheel"].enabled = false
+data.raw.recipe["burner-inserter"].enabled = false
 
---data.raw.recipe["electronic-circuit"].normal.enabled = false
---data.raw.recipe["electronic-circuit"].expensive.enabled = false
---data.raw.recipe["electric-mining-drill"].expensive.enabled = false
---data.raw.recipe["electric-mining-drill"].normal.enabled = false
-
+data.raw.item["biter-egg"].spoil_to_trigger_result =
+    {
+      items_per_trigger = 25,
+      trigger =
+      {
+        type = "direct",
+        action_delivery =
+        {
+          type = "instant",
+          source_effects =
+          {
+            {
+              type = "create-entity",
+              entity_name = "small-biter",
+              affects_target = true,
+              show_in_tooltip = true,
+              as_enemy = true,
+              find_non_colliding_position = true,
+              abort_if_over_space = true,
+              offset_deviation = {{-1, -1}, {1, 1}},
+              non_colliding_fail_result =
+              {
+                type = "direct",
+                action_delivery =
+                {
+                  type = "instant",
+                  source_effects =
+                  {
+                    {
+                      type = "create-entity",
+                      entity_name = "small-biter",
+                      affects_target = true,
+                      show_in_tooltip = false,
+                      as_enemy = true,
+                      offset_deviation = {{-1, -1}, {1, 1}},
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
 data.raw.item["rocket-silo"].subgroup = "space-related"
 data.raw.item["cargo-landing-pad"].subgroup = "space-related"

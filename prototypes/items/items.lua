@@ -4,7 +4,7 @@ data:extend {
     {
         type = "item",
         name = "smart-battery",
-        icon = "__Compaction2__/graphics/icons/smart-battery.png",
+        icon = "__Compaction2__/graphics/icons/intermediate/smart-battery.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "intermediate-product",
         order = "i[battery]",
@@ -13,7 +13,7 @@ data:extend {
     {
         type = "item",
         name = "flight-controller",
-        icon = "__Compaction2__/graphics/icons/flight-controller.png",
+        icon = "__Compaction2__/graphics/icons/intermediate/flight-controller.png",
         icon_size = 64, icon_mipmaps = 1,
         subgroup = "intermediate-product",
         order = "k",
@@ -84,7 +84,7 @@ data:extend {
     {
         type = "item",
         name = "gravel",
-        icon = "__Compaction2__/graphics/icons/gravel.png",
+        icon = "__Compaction2__/graphics/icons/resource/gravel.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "shredder-subgroup",
         order = "b",
@@ -93,7 +93,7 @@ data:extend {
     {
         type = "item",
         name = "sand",
-        icon = "__Compaction2__/graphics/icons/sand.png",
+        icon = "__Compaction2__/graphics/icons/resource/sand.png",
         icon_size = 64, icon_mipmaps = 4,
         order = "c",
         subgroup = "shredder-subgroup",
@@ -102,15 +102,15 @@ data:extend {
     {
         type = "item",
         name = "glass",
-        icon = "__Compaction2__/graphics/icons/glass/part-glass-1.png",
+        icon = "__Compaction2__/graphics/icons/glass/glass-1.png",
         pictures =
         {
-            { size = 64, filename = "__Compaction2__/graphics/icons/glass/part-glass-1.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/glass/part-glass-2.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/glass/part-glass-3.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/glass/part-glass-4.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/glass/part-glass-5.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/glass/part-glass-6.png", scale = 0.25, mipmap_count = 4 }
+            { size = 64, filename = "__Compaction2__/graphics/icons/glass/glass-1.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/glass/glass-2.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/glass/glass-3.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/glass/glass-4.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/glass/glass-5.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/glass/glass-6.png", scale = 0.25, mipmap_count = 4 }
         },
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "raw-material",
@@ -138,7 +138,7 @@ data:extend {
     {
         type = "item",
         name = "carbon",
-        icon = "__Compaction2__/graphics/icons/carbon.png",
+        icon = "__Compaction2__/graphics/icons/carbon/carbon.png",
         icon_size = 64, icon_mipmaps = 4,
         fuel_value = "20MJ",
         fuel_category = "chemical",
@@ -163,12 +163,12 @@ data:extend {
     {
         type = "item",
         name = "quartz",
-        icon = "__Compaction2__/graphics/icons/quartz/quartz-1.png",
+        icon = "__Compaction2__/graphics/icons/crystals/quartz-1.png",
         pictures =
         {
-            { size = 64, filename = "__Compaction2__/graphics/icons/quartz/quartz-1.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/quartz/quartz-2.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/quartz/quartz-3.png", scale = 0.25, mipmap_count = 4 }
+            { size = 64, filename = "__Compaction2__/graphics/icons/crystals/quartz-1.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/crystals/quartz-2.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/crystals/quartz-3.png", scale = 0.25, mipmap_count = 4 }
         },
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "item-growing",
@@ -177,7 +177,7 @@ data:extend {
     {
         type = "item",
         name = "solid-diploid-chloride",
-        icon = "__Compaction2__/graphics/icons/solid-diploid-chloride.png",
+        icon = "__Compaction2__/graphics/icons/resource/solid-diploid-chloride.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "item-growing",
         stack_size = 100
@@ -185,7 +185,7 @@ data:extend {
     {
         type = "item",
         name = "solid-sulfuric-diploid-chloride",
-        icon = "__Compaction2__/graphics/icons/solid-sulfuric-diploid-chloride.png",
+        icon = "__Compaction2__/graphics/icons/resource/solid-sulfuric-diploid-chloride.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "item-growing",
         stack_size = 100
@@ -193,13 +193,13 @@ data:extend {
     {
         type = "item",
         name = "azure-crystal",
-        icon = "__Compaction2__/graphics/icons/azure-crystal/azure-crystal-1.png",
+        icon = "__Compaction2__/graphics/icons/crystals/azure-crystal-1.png",
         pictures =
         {
-            { size = 64, filename = "__Compaction2__/graphics/icons/azure-crystal/azure-crystal-1.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/azure-crystal/azure-crystal-2.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/azure-crystal/azure-crystal-3.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/azure-crystal/azure-crystal-4.png", scale = 0.25, mipmap_count = 4 }
+            { size = 64, filename = "__Compaction2__/graphics/icons/crystals/azure-crystal-1.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/crystals/azure-crystal-2.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/crystals/azure-crystal-3.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/crystals/azure-crystal-4.png", scale = 0.25, mipmap_count = 4 }
         },
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "item-growing",
@@ -208,12 +208,12 @@ data:extend {
     {
         type = "item",
         name = "pyrite-crystal",
-        icon = "__Compaction2__/graphics/icons/pyrite-crystal/pyrite-crystal-1.png",
+        icon = "__Compaction2__/graphics/icons/crystals/pyrite-crystal-1.png",
         pictures =
         {
-            { size = 64, filename = "__Compaction2__/graphics/icons/pyrite-crystal/pyrite-crystal-1.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/pyrite-crystal/pyrite-crystal-2.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/pyrite-crystal/pyrite-crystal-3.png", scale = 0.25, mipmap_count = 4 }
+            { size = 64, filename = "__Compaction2__/graphics/icons/crystals/pyrite-crystal-1.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/crystals/pyrite-crystal-2.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/crystals/pyrite-crystal-3.png", scale = 0.25, mipmap_count = 4 }
         },
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "item-growing",
@@ -222,13 +222,13 @@ data:extend {
     {
         type = "item",
         name = "fluorite-crystal",
-        icon = "__Compaction2__/graphics/icons/fluorite-crystal/fluorite-crystal-1.png",
+        icon = "__Compaction2__/graphics/icons/crystals/fluorite-crystal-1.png",
         pictures =
         {
-            { size = 64, filename = "__Compaction2__/graphics/icons/fluorite-crystal/fluorite-crystal-1.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/fluorite-crystal/fluorite-crystal-2.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/fluorite-crystal/fluorite-crystal-3.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/fluorite-crystal/fluorite-crystal-4.png", scale = 0.25, mipmap_count = 4 }
+            { size = 64, filename = "__Compaction2__/graphics/icons/crystals/fluorite-crystal-1.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/crystals/fluorite-crystal-2.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/crystals/fluorite-crystal-3.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/crystals/fluorite-crystal-4.png", scale = 0.25, mipmap_count = 4 }
         },
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "item-growing",
@@ -237,12 +237,12 @@ data:extend {
     {
         type = "item",
         name = "material-blob",
-        icon = "__Compaction2__/graphics/icons/material-blob/material-blob-1.png",
+        icon = "__Compaction2__/graphics/icons/metallurgy/material-blob-1.png",
         pictures =
         {
-            { size = 64, filename = "__Compaction2__/graphics/icons/material-blob/material-blob-1.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/material-blob/material-blob-2.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/material-blob/material-blob-3.png", scale = 0.25, mipmap_count = 4 }
+            { size = 64, filename = "__Compaction2__/graphics/icons/metallurgy/material-blob-1.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/metallurgy/material-blob-2.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/metallurgy/material-blob-3.png", scale = 0.25, mipmap_count = 4 }
         },
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "item-growing",
@@ -251,7 +251,7 @@ data:extend {
     {
         type = "item",
         name = "nugget-metal",
-        icon = "__Compaction2__/graphics/icons/metal-nugget.png",
+        icon = "__Compaction2__/graphics/icons/metallurgy/metal-nugget.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "raw-resource",
         stack_size = 500
@@ -259,7 +259,7 @@ data:extend {
     {
         type = "item",
         name = "nugget-gold",
-        icon = "__Compaction2__/graphics/icons/nugget-gold.png",
+        icon = "__Compaction2__/graphics/icons/metallurgy/nugget-gold.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "raw-resource",
         stack_size = 500
@@ -267,7 +267,7 @@ data:extend {
     {
         type = "item",
         name = "gold-ingot",
-        icon = "__Compaction2__/graphics/icons/gold-ingot.png",
+        icon = "__Compaction2__/graphics/icons/metallurgy/gold-ingot.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "raw-material",
         stack_size = 250
@@ -275,7 +275,7 @@ data:extend {
     {
         type = "item",
         name = "gold-foil",
-        icon = "__Compaction2__/graphics/icons/gold-foil.png",
+        icon = "__Compaction2__/graphics/icons/metallurgy/gold-foil.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "raw-material",
         stack_size = 50
@@ -283,7 +283,7 @@ data:extend {
     {
         type = "item",
         name = "iron-mesh",
-        icon = "__Compaction2__/graphics/icons/iron-mesh.png",
+        icon = "__Compaction2__/graphics/icons/metallurgy/iron-mesh.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "intermediate-product",
         stack_size = 250
@@ -291,7 +291,7 @@ data:extend {
     {
         type = "item",
         name = "gold-mesh",
-        icon = "__Compaction2__/graphics/icons/gold-mesh.png",
+        icon = "__Compaction2__/graphics/icons/metallurgy/gold-mesh.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "intermediate-product",
         stack_size = 250
@@ -314,7 +314,7 @@ data:extend {
     {
         type = "item",
         name = "carbon-fiber",
-        icon = "__Compaction2__/graphics/icons/carbon-fiber.png",
+        icon = "__Compaction2__/graphics/icons/carbon/carbon-fiber.png",
         icon_size = 64, icon_mipmaps = 1,
         subgroup = "intermediate-product",
         order = "a",
@@ -323,7 +323,7 @@ data:extend {
     {
         type = "item",
         name = "rocket-casing",
-        icon = "__Compaction2__/graphics/icons/rocket-casing.png",
+        icon = "__Compaction2__/graphics/icons/intermediate/rocket-casing.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "ammo",
         order = "cd",
@@ -332,7 +332,7 @@ data:extend {
     {
         type = "item",
         name = "rocket-control-unit",
-        icon = "__Compaction2__/graphics/icons/rocket-control-unit.png",
+        icon = "__Compaction2__/graphics/icons/intermediate/rocket-control-unit.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "space-material",
         order = "cd",
@@ -341,7 +341,7 @@ data:extend {
     {
         type = "tool",
         name = "flight-science-pack",
-        icon = "__Compaction2__/graphics/icons/flight-science-pack.png",
+        icon = "__Compaction2__/graphics/icons/science/flight-science-pack.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "science-pack",
         order = "c",
@@ -351,7 +351,7 @@ data:extend {
     {
         type = "tool",
         name = "empty-science-pack",
-        icon = "__Compaction2__/graphics/icons/empty-science-pack.png",
+        icon = "__Compaction2__/graphics/icons/science/empty-science-pack.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "science-pack",
         order = "9",
@@ -359,10 +359,20 @@ data:extend {
         durability = 1,
     },
     {
+        type = "tool",
+        name = "specimin-empty-science-pack",
+        icon = "__Compaction2__/graphics/icons/science/specimin-empty-science-pack.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "nauvis-agriculture",
+        order = "a",
+        stack_size = 100,
+        durability = 1,
+    },
+    {
         type = "item",
         name = "high-quality-iron-ore",
-        icon = "__base__/graphics/icons/iron-ore.png",
-        icon_size = 64, icon_mipmaps = 4,
+        icon = "__Compaction2__/graphics/icons/resource/iron-ore.png",
+        icon_size = 64, icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "z",
         stack_size = 50
@@ -370,8 +380,8 @@ data:extend {
     {
         type = "item",
         name = "high-quality-copper-ore",
-        icon = "__base__/graphics/icons/copper-ore.png",
-        icon_size = 64, icon_mipmaps = 4,
+        icon = "__Compaction2__/graphics/icons/resource/copper-ore.png",
+        icon_size = 64, icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "z",
         stack_size = 50
@@ -379,7 +389,7 @@ data:extend {
     {
         type = "item",
         name = "bullets",
-        icon = "__Compaction2__/graphics/icons/bullet-casings/part-bullets.png",
+        icon = "__Compaction2__/graphics/icons/bullet-casings/bullets.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "ammo",
         order = "b",
@@ -388,7 +398,7 @@ data:extend {
     {
         type = "item",
         name = "magazine",
-        icon = "__Compaction2__/graphics/icons/bullet-casings/part-ammo-magazine.png",
+        icon = "__Compaction2__/graphics/icons/bullet-casings/ammo-magazine.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "ammo",
         order = "a",
@@ -397,14 +407,14 @@ data:extend {
     {
         type = "item",
         name = "bullet-casing",
-        icon = "__Compaction2__/graphics/icons/bullet-casings/part-bullet-casings-1.png",
+        icon = "__Compaction2__/graphics/icons/bullet-casings/bullet-casings-1.png",
         pictures =
         {
-            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/part-bullet-casings-1.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/part-bullet-casings-2.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/part-bullet-casings-3.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/part-bullet-casings-4.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/part-bullet-casings-5.png", scale = 0.25, mipmap_count = 4 }
+            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/bullet-casings-1.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/bullet-casings-2.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/bullet-casings-3.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/bullet-casings-4.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/bullet-casings-5.png", scale = 0.25, mipmap_count = 4 }
         },
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "ammo",
@@ -414,12 +424,12 @@ data:extend {
     {
         type = "item",
         name = "shotgun-hulls",
-        icon = "__Compaction2__/graphics/icons/bullet-casings/part-ammo-shotgun-hulls-1.png",
+        icon = "__Compaction2__/graphics/icons/bullet-casings/ammo-shotgun-hulls-1.png",
         pictures =
         {
-            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/part-ammo-shotgun-hulls-1.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/part-ammo-shotgun-hulls-2.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/part-ammo-shotgun-hulls-3.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/ammo-shotgun-hulls-1.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/ammo-shotgun-hulls-2.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__Compaction2__/graphics/icons/bullet-casings/ammo-shotgun-hulls-3.png", scale = 0.25, mipmap_count = 4 },
         },
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "ammo",
@@ -445,38 +455,8 @@ data:extend {
     },
     {
         type = "item",
-        name = "biter-organs",
-        icon = "__Compaction2__/graphics/icons/organs/biter-organs-1.png",
-        pictures =
-        {
-            { size = 64, filename = "__Compaction2__/graphics/icons/organs/biter-organs-1.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/organs/biter-organs-2.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/organs/biter-organs-3.png", scale = 0.25, mipmap_count = 4 },
-        },
-        icon_size = 64, icon_mipmaps = 4,
-        subgroup = "organs",
-        stack_size = 60
-    },
-    {
-        type = "item",
-        name = "tree-seeds",
-        icon = "__Compaction2__/graphics/icons/seeds/seeds-1.png",
-        pictures =
-        {
-            { size = 64, filename = "__Compaction2__/graphics/icons/seeds/seeds-1.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/seeds/seeds-2.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__Compaction2__/graphics/icons/seeds/seeds-3.png", scale = 0.25, mipmap_count = 4 },
-        },
-        icon_size = 64, icon_mipmaps = 4,
-        subgroup = "organs",
-        stack_size = 100,
-        fuel_value = "0.5MJ",
-        fuel_category = "chemical"
-    },
-    {
-        type = "item",
         name = "burner-lab",
-        icon = "__Compaction2__/graphics/icons/burner-lab.png",
+        icon = "__Compaction2__/graphics/entity/icons/burner-lab.png",
         icon_size = 64, icon_mipmaps = 1,
         flags = data.raw.item.lab.flags,
         subgroup = data.raw.item.lab.subgroup,
@@ -569,7 +549,7 @@ data:extend {
                                 },
                                 {
                                     type = "damage",
-                                    damage = { amount = 1, type = "physical" }
+                                    damage = { amount = 3, type = "physical" }
                                 },
                                 {
                                     type = "activate-impact",
@@ -587,7 +567,7 @@ data:extend {
         inventory_move_sound = item_sounds.ammo_small_inventory_move,
         pick_sound = item_sounds.ammo_small_inventory_pickup,
         drop_sound = item_sounds.ammo_small_inventory_move,
-        stack_size = 5,
+        stack_size = 50,
         weight = 3 * kg
     },
     {
@@ -706,7 +686,17 @@ data:extend {
         type = "item",
         name = "natter",
         icon_size = 256, icon_mipmaps = 4,
-        icon = "__Compaction2__/graphics/icons/matter.png",
+        icon = "__Compaction2__/graphics/icons/resource/matter.png",
+        subgroup = "raw-material",
+        hidden = true,
+        order = "n",
+        stack_size = 100,
+    },
+    {
+        type = "item",
+        name = "sack-o-dirt",
+        icon_size = 64, icon_mipmaps = 4,
+        icon = "__Compaction2__/graphics/icons/resource/sack-o-dirt.png",
         subgroup = "raw-material",
         order = "n",
         stack_size = 100,
@@ -714,7 +704,7 @@ data:extend {
     {
         type = "tool",
         name = "wooden-tech-card",
-        icon = "__Compaction2__/graphics/icons/wooden-tech-card.png",
+        icon = "__Compaction2__/graphics/icons/science/wooden-tech-card.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "science-pack",
         order = "a",
@@ -724,50 +714,9 @@ data:extend {
     {
         type = "item",
         name = "info",
+        hidden = true,
         icon_size = 64, icon_mipmaps = 4,
         icon = "__base__/graphics/icons/info.png",
         stack_size = 100,
     },
 }
-
-if (mods["space-age"]) then
-    -- removes items if space age is enabled
-else
-    data:extend {
-        {
-            type = "item",
-            name = "space-supplies-science",
-            icon = "__Compaction2__/graphics/icons/space-supplies.png",
-            icon_size = 64,
-            subgroup = "space-material",
-            order = "d",
-            stack_size = 15,
-            weight = 1 * tons,
-            rocket_launch_products = { { type = "item", name = "space-science-pack", amount = 1000 } },
-            send_to_orbit_mode = "automated"
-        },
-        {
-            type = "item",
-            name = "satellite",
-            icon_size = 64,
-            icon = "__base__/graphics/icons/satellite.png",
-            subgroup = "space-material",
-            order = "d[rocket-parts]-e[satellite]",
-            stack_size = 1,
-        },
-        {
-            type = "item",
-            name = "biter-egg",
-            icon = "__Compaction2__/graphics/icons/biter-egg/biter-egg.png",
-            pictures =
-            {
-                { size = 64, filename = "__Compaction2__/graphics/icons/biter-egg/biter-egg-1.png", scale = 0.25, mipmap_count = 4 },
-                { size = 64, filename = "__Compaction2__/graphics/icons/biter-egg/biter-egg-2.png", scale = 0.25, mipmap_count = 4 },
-                { size = 64, filename = "__Compaction2__/graphics/icons/biter-egg/biter-egg-3.png", scale = 0.25, mipmap_count = 4 },
-            },
-            icon_size = 64, icon_mipmaps = 4,
-            subgroup = "organs",
-            stack_size = 60
-        },
-    }
-end

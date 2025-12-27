@@ -25,9 +25,15 @@ data:extend {
 	},
 	{
 		type = "item-subgroup",
-		name = "organs",
+		name = "agriculture-products",
 		group = "intermediate-products",
-		order = "z"
+		order = "n"
+	},
+	{
+		type = "item-subgroup",
+		name = "nauvis-agriculture",
+		group = "intermediate-products",
+		order = "o"
 	},
 	{
 		type = "item-group",

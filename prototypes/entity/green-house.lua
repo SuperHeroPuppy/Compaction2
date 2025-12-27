@@ -19,7 +19,7 @@ data:extend({
     ingredient_count = 4,
     crafting_speed = 1,
     crafting_categories = { "green-house" },
-    icon = "__Compaction2__/graphics/icons/green-house.png",
+    icon = "__Compaction2__/graphics/entity/icons/green-house.png",
     icon_size = 64,
     circuit_wire_max_distance = default_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions.create_vector
@@ -119,7 +119,7 @@ data:extend {
   {
     type = "item",
     name = "green-house",
-    icon = "__Compaction2__/graphics/icons/green-house.png",
+    icon = "__Compaction2__/graphics/entity/icons/green-house.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = "production-machine",
     order = "g",
@@ -147,6 +147,7 @@ data:extend {
     name = "greenhouse",
     category = "green-house",
     subgroup = "item-growing",
+    auto_recycle = false,
     enabled = false,
     energy_required = 5.5,
     crafting_speed = 5.5,
@@ -154,11 +155,11 @@ data:extend {
     icon_size = 64,
     ingredients = {
       { type = "fluid", name = "water",  amount = 570 },
-      { type = "item", name = "tree-seeds", amount = 2 },
+      { type = "item", name = "tree-seed", amount = 2 },
     },
     results = {
       { type = "item", name = "wood",   amount = 25 },
-      { type = "item", name = "tree-seeds", amount_min = 3, amount_max = 5, probability = 0.5 },
+      { type = "item", name = "tree-seed", amount_min = 3, amount_max = 5, probability = 0.5 },
     },
   },
   {
@@ -171,6 +172,7 @@ data:extend {
     icon = "__Compaction2__/graphics/research/crystal-processing.png",
     icon_size = 1024,
     subgroup = "item-growing",
+    auto_recycle = false,
     enabled = false,
     ingredients = {
       { type = "item", name = "gravel", amount = 5 },

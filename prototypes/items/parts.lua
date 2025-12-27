@@ -2,7 +2,7 @@ data:extend{
     {
         type = "item",
         name = "electronic-parts",
-        icon = "__Compaction2__/graphics/icons/part-electronic.png",
+        icon = "__Compaction2__/graphics/icons/electronics/part-electronic.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "intermediate-product",
         order = "a[circuits]-a[electronic-circuit]",
@@ -11,7 +11,7 @@ data:extend{
     {
         type = "item",
         name = "wooden-electronic-board",
-        icon = "__Compaction2__/graphics/icons/wooden-electronic-board.png",
+        icon = "__Compaction2__/graphics/icons/electronics/wooden-electronic-board.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "intermediate-product",
         order = "a[circuits]-a[electronic-circuit]",
@@ -20,7 +20,7 @@ data:extend{
     {
         type = "item",
         name = "basic-circuit",
-        icon = "__Compaction2__/graphics/icons/basic-circuit.png",
+        icon = "__Compaction2__/graphics/icons/electronics/basic-circuit.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "intermediate-product",
         order = "a[circuits]-a[electronic-circuit]",
@@ -29,7 +29,7 @@ data:extend{
     {
         type = "item",
         name = "metal-bearing",
-        icon = "__Compaction2__/graphics/icons/part-metal-bearing.png",
+        icon = "__Compaction2__/graphics/icons/intermediate/metal-bearing.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "intermediate-product",
         order = "a",
@@ -38,7 +38,7 @@ data:extend{
     {
         type = "item",
         name = "clean-filter",
-        icon = "__Compaction2__/graphics/icons/part-filter-simple.png",
+        icon = "__Compaction2__/graphics/icons/intermediate/filter-simple.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "intermediate-product",
         order = "d",
@@ -47,7 +47,7 @@ data:extend{
     {
         type = "item",
         name = "dirty-filter",
-        icon = "__Compaction2__/graphics/icons/part-filter-simple-clean.png",
+        icon = "__Compaction2__/graphics/icons/intermediate/filter-simple-clean.png",
         icon_size = 64, icon_mipmaps = 4,
         subgroup = "intermediate-product",
         order = "d",
