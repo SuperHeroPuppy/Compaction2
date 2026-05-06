@@ -161,9 +161,10 @@ crash_site_interior_power_pole.selection_box = { { -0.1, -0.1 }, { 0.1, 0.1 } }
 crash_site_interior_power_pole.maximum_wire_distance = 64
 crash_site_interior_power_pole.supply_area_distance = 64
 crash_site_interior_power_pole.pictures = {
-  filename = "__Compaction2__/graphics/entity/empty.png",
+  filename = "__core__/graphics/empty.png",
   width = 1,
   height = 1,
+  direction_count = 1,
 }
 crash_site_interior_power_pole.connection_points = {
   {
@@ -194,10 +195,10 @@ data:extend({
     energy_usage = "240kW",
     energy_production = "0kW",
     picture = {
-      filename = "__Compaction2__/graphics/entity/empty.png",
+      filename = "__core__/graphics/empty.png",
       width = 1,
       height = 1,
-    },
+    }
   },
   crash_site_interior_power_pole,
 })
