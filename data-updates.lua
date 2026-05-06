@@ -270,6 +270,13 @@ data.raw.recipe["automation-science-pack"].ingredients =
     {type = "item", name = "empty-science-pack", amount = 1},
 }
 
+data.raw.recipe["engine-unit"].ingredients =
+{
+    {type = "item", name = "steel-plate", amount = 1},
+    {type = "item", name = "metal-bearing", amount = 1},
+    {type = "item", name = "pipe", amount = 2},
+}
+
 data.raw.recipe["logistic-science-pack"].ingredients =
 {
     {type = "item", name = "inserter", amount = 1},

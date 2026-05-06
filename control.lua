@@ -1,5 +1,11 @@
 local math2d = require("__core__/lualib/math2d")
 
+local CRASH_SITE_INTERIOR = "crash-site-interior"
+local CRASH_SITE_INTERIOR_POWER_POLE = "crash-site-interior-power-pole"
+local CRASH_SITE_POWER_LINK = "crash-site-power-link"
+local CRASH_SITE_POWER_BUFFER = 240000
+local CRASH_SITE_POWER_TICK_INTERVAL = 60
+
 script.on_event(defines.events.on_entity_died, function(event)
   local entity = event.entity
   entity.surface.spill_item_stack({
@@ -54,6 +60,30 @@ local new_ship_parts = {
 }
 
 local function add_surface_to_crash_site()
+  local function make_reactor(surface, pos)
+    if #surface.find_entities_filtered { name = "spaceship-reactor" } == 0 then
+      local e = surface.create_entity { name = "spaceship-reactor", position = pos, force = "player" }
+      e.minable = false
+      e.destructible = false
+      e.energy = 0
+    end
+  end
+
+  local function make_power_pole(surface, pos)
+    if #surface.find_entities_filtered { name = CRASH_SITE_INTERIOR_POWER_POLE } == 0 then
+      local e = surface.create_entity { name = CRASH_SITE_INTERIOR_POWER_POLE, position = pos, force = "player" }
+      e.minable = false
+      e.destructible = false
+    end
+  end
+
+  local existing_surface = game.surfaces[CRASH_SITE_INTERIOR]
+  if existing_surface then
+    make_reactor(existing_surface, { 8, 8 })
+    make_power_pole(existing_surface, { 0, 0 })
+    return
+  end
+
   local settings = {
     autoplace_settings = {
       tile = {
@@ -69,7 +99,7 @@ local function add_surface_to_crash_site()
     }
   }
 
-  local new_surface = game.create_surface("crash-site-interior", settings)
+  local new_surface = game.create_surface(CRASH_SITE_INTERIOR, settings)
   new_surface.request_to_generate_chunks({ 0, 0 }, 2)
   new_surface.force_generate_chunk_requests()
 
@@ -123,6 +153,51 @@ local function add_surface_to_crash_site()
 
     -- Add linked chest in top-left interior corner
     make_linked_chest({ -11, -11 })
+    make_reactor(new_surface, { 8, 8 })
+    make_power_pole(new_surface, { 0, 0 })
+  end
+end
+
+local function ensure_crash_site_power_links()
+  local nauvis = game.surfaces.nauvis
+  if not nauvis then return end
+
+  for _, crash_site in pairs(nauvis.find_entities_filtered { name = "crash-site-spaceship" }) do
+    local links = nauvis.find_entities_filtered {
+      name = CRASH_SITE_POWER_LINK,
+      area = {
+        { crash_site.position.x - 0.5, crash_site.position.y - 0.5 },
+        { crash_site.position.x + 0.5, crash_site.position.y + 0.5 },
+      },
+    }
+
+    if #links == 0 then
+      local link = nauvis.create_entity {
+        name = CRASH_SITE_POWER_LINK,
+        position = crash_site.position,
+        force = crash_site.force,
+      }
+      link.minable = false
+      link.destructible = false
+      link.energy = 0
+    end
+  end
+end
+
+local function power_crash_site_interior()
+  local nauvis = game.surfaces.nauvis
+  local interior = game.surfaces[CRASH_SITE_INTERIOR]
+  if not nauvis or not interior then return end
+
+  local outside_link = nauvis.find_entities_filtered { name = CRASH_SITE_POWER_LINK }[1]
+  local inside_reactor = interior.find_entities_filtered { name = "spaceship-reactor" }[1]
+  if not outside_link or not inside_reactor then return end
+
+  if outside_link.energy >= CRASH_SITE_POWER_BUFFER then
+    outside_link.energy = outside_link.energy - CRASH_SITE_POWER_BUFFER
+    inside_reactor.energy = CRASH_SITE_POWER_BUFFER
+  else
+    inside_reactor.energy = 0
   end
 end
 
@@ -159,8 +234,11 @@ script.on_init(function()
   if not remote.interfaces.freeplay then
     return
   end
+
   add_surface_to_crash_site()
   add_to_crash_site()
+  ensure_crash_site_power_links()
+
   for _, interface in pairs { "silo_script", "better-victory-screen" } do
     if remote.interfaces[interface] and remote.interfaces[interface]["set_no_victory"] then
       remote.call(interface, "set_no_victory", true)
@@ -169,6 +247,9 @@ script.on_init(function()
 end)
 
 script.on_configuration_changed(function()
+  add_surface_to_crash_site()
+  ensure_crash_site_power_links()
+
   for _, interface in pairs { "silo_script", "better-victory-screen" } do
     if remote.interfaces[interface] and remote.interfaces[interface]["set_no_victory"] then
       remote.call(interface, "set_no_victory", true)
@@ -176,32 +257,64 @@ script.on_configuration_changed(function()
   end
 end)
 
--- Event to limit linked-transfer-port to one per surface
-script.on_event({defines.events.on_built_entity, defines.events.on_robot_built_entity}, function(event)
-    local entity = event.created_entity or event.entity
-    if not entity or entity.valid then
-        -- Only care about linked-transfer-port
-        if entity.name == "linked-transfer-port" then
-            local surface = entity.surface
-            -- Count existing linked-transfer-port entities on this surface
-            local existing = surface.find_entities_filtered{name = "linked-transfer-port"}
-            
-            -- If more than 1 exists, remove the new one
-            if #existing > 1 then
-                -- Optionally return item to player
-                if event.player_index then
-                    local player = game.get_player(event.player_index)
-                    if player and player.valid then
-                        player.insert{name = "linked-transfer-port", count = 1}
-                        player.print("You can only have one linked-transfer-port per surface.")
-                    end
-                end
-                -- Destroy the new entity
-                entity.destroy()
-            end
-        end
-    end
+script.on_nth_tick(CRASH_SITE_POWER_TICK_INTERVAL, function()
+  ensure_crash_site_power_links()
+  power_crash_site_interior()
 end)
+
+-- Event to limit linked-transfer-port to one per surface
+script.on_event(
+  { defines.events.on_built_entity, defines.events.on_robot_built_entity },
+  function(event)
+    local entity = event.created_entity or event.entity
+    if not entity or not entity.valid then return end
+
+    if entity.name ~= "linked-transfer-port" then return end
+
+    local surface = entity.surface
+
+    -- ONE PER SURFACE RULE
+    local existing = surface.find_entities_filtered { name = "linked-transfer-port" }
+    if #existing > 1 then
+      if event.player_index then
+        local player = game.get_player(event.player_index)
+        if player and player.valid then
+          player.insert { name = "linked-transfer-port", count = 1 }
+          player.print("You can only have one linked-transfer-port per surface.")
+        end
+      end
+      entity.destroy()
+      return
+    end
+
+    -- NAUVIS-SPECIFIC RESTRICTION
+    if surface == game.surfaces.nauvis then
+      local pos = entity.position
+
+      -- Search for crash site within 5 tiles
+      local crash_sites = surface.find_entities_filtered {
+        name = "crash-site-spaceship",
+        area = {
+          { pos.x - 5, pos.y - 5 },
+          { pos.x + 5, pos.y + 5 }
+        }
+      }
+
+      if #crash_sites == 0 then
+        -- Invalid placement
+        if event.player_index then
+          local player = game.get_player(event.player_index)
+          if player and player.valid then
+            player.insert { name = "linked-transfer-port", count = 1 }
+            player.print("linked-transfer-port must be built within 5 tiles of the crash-site-spaceship.")
+          end
+        end
+        entity.destroy()
+        return
+      end
+    end
+  end
+)
 
 script.on_event(defines.events.on_player_changed_position, function(event)
   local player = game.get_player(event.player_index)
@@ -219,7 +332,7 @@ script.on_event(defines.events.on_player_changed_position, function(event)
     }
 
     if math2d.bounding_box.contains_point(expanded_bbox, player.position) then
-      local target_surface = game.surfaces["crash-site-interior"]
+      local target_surface = game.surfaces[CRASH_SITE_INTERIOR]
       local target_position = { x = 0, y = 10 }
       player.teleport(target_position, target_surface)
     end

@@ -9,6 +9,11 @@ linked_transfer_port.selection_box = { { -0.5, -0.5 }, { 0.5, 0.5 } }
 linked_transfer_port.link_id = "crash-site-link"
 linked_transfer_port.inventory_size = 5              -- only one slot
 linked_transfer_port.gui_mode = "none"               -- prevents opening by player
+linked_transfer_port.resistances = {
+      { type = "fire",     percent = 100 },
+      { type = "impact",   percent = 60 },
+      { type = "physical", percent = 50 },
+    }
 if (mods["space-age"]) then
   linked_transfer_port.surface_conditions =
     {
@@ -66,6 +71,7 @@ data:extend {
         icon_size = 64,
         subgroup = "storage",
         place_result = "linked-transfer-port",
-        stack_size = 1
+        stack_size = 1,
+        weight = 10 * tons
     }
 }

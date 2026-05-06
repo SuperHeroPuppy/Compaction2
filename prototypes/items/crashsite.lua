@@ -150,6 +150,58 @@ data:extend(
 data.raw.container['crash-site-spaceship'].minable.result = 'crash-site-spaceship'
 data.raw.container['crash-site-spaceship'].inventory_size = 5
 
+local crash_site_interior_power_pole = table.deepcopy(data.raw["electric-pole"]["small-electric-pole"])
+crash_site_interior_power_pole.name = "crash-site-interior-power-pole"
+crash_site_interior_power_pole.flags = { "placeable-off-grid", "not-on-map", "not-blueprintable", "not-deconstructable" }
+crash_site_interior_power_pole.hidden = true
+crash_site_interior_power_pole.selectable_in_game = false
+crash_site_interior_power_pole.collision_mask = { layers = {} }
+crash_site_interior_power_pole.collision_box = { { -0.1, -0.1 }, { 0.1, 0.1 } }
+crash_site_interior_power_pole.selection_box = { { -0.1, -0.1 }, { 0.1, 0.1 } }
+crash_site_interior_power_pole.maximum_wire_distance = 64
+crash_site_interior_power_pole.supply_area_distance = 64
+crash_site_interior_power_pole.pictures = {
+  filename = "__Compaction2__/graphics/entity/empty.png",
+  width = 1,
+  height = 1,
+}
+crash_site_interior_power_pole.connection_points = {
+  {
+    shadow = { copper = { 0, 0 }, green = { 0, 0 }, red = { 0, 0 } },
+    wire = { copper = { 0, 0 }, green = { 0, 0 }, red = { 0, 0 } },
+  },
+}
+crash_site_interior_power_pole.minable = nil
+
+data:extend({
+  {
+    type = "electric-energy-interface",
+    name = "crash-site-power-link",
+    icon = "__base__/graphics/icons/crash-site-spaceship.png",
+    flags = { "placeable-off-grid", "not-on-map", "not-blueprintable", "not-deconstructable" },
+    hidden = true,
+    selectable_in_game = false,
+    collision_mask = { layers = {} },
+    collision_box = { { -0.1, -0.1 }, { 0.1, 0.1 } },
+    selection_box = { { -0.1, -0.1 }, { 0.1, 0.1 } },
+    energy_source = {
+      type = "electric",
+      buffer_capacity = "240kJ",
+      usage_priority = "secondary-input",
+      input_flow_limit = "240kW",
+      output_flow_limit = "0kW",
+    },
+    energy_usage = "240kW",
+    energy_production = "0kW",
+    picture = {
+      filename = "__Compaction2__/graphics/entity/empty.png",
+      width = 1,
+      height = 1,
+    },
+  },
+  crash_site_interior_power_pole,
+})
+
 local flags = {}
 for _, flag in ipairs(data.raw.container['crash-site-spaceship'].flags) do
   if flag ~= 'placeable-off-grid' then
@@ -158,6 +210,7 @@ for _, flag in ipairs(data.raw.container['crash-site-spaceship'].flags) do
 end
 data.raw.container['crash-site-spaceship'].flags = flags
 
+data.raw.container['crash-site-spaceship'].weight = 10 * tons
 
 if (mods["space-age"]) then
   data.raw.container['crash-site-spaceship'].surface_conditions =

@@ -864,7 +864,7 @@ data:extend {
         type = "recipe",
         name = "iron-tip-magazine",
         category = "crafting",
-        enabled = false,
+        enabled = true,
         energy_required = 1.0,
         crafting_speed = 0.5,
         ingredients = {
