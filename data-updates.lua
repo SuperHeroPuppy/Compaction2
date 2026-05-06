@@ -79,6 +79,8 @@ add_science_pack(data.raw["technology"]["worker-robots-speed-4"], "flight-scienc
 add_science_pack(data.raw["technology"]["worker-robots-speed-5"], "flight-science-pack", 1)
 add_science_pack(data.raw["technology"]["worker-robots-speed-6"], "flight-science-pack", 1)
 
+add_science_pack(data.raw["technology"]["gun-turret"], "wooden-tech-card", 1)
+
 data.raw.recipe["transport-belt"].enabled = false
 data.raw.recipe["inserter"].enabled = false
 data.raw.recipe["light-armor"].enabled = false
