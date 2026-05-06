@@ -154,7 +154,7 @@ local function add_surface_to_crash_site()
     -- Add linked chest in top-left interior corner
     make_linked_chest({ -11, -11 })
     make_reactor(new_surface, { 8, 8 })
-    make_power_pole(new_surface, { 0, 0 })
+    make_power_pole(new_surface, { 14, 0 })
   end
 end
 
